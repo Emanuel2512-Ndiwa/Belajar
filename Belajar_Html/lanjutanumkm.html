@@ -1,0 +1,73 @@
+<!-- LANJUTAN PROJECT KRIPIK PISANG FLOJA -->
+
+<hr>
+
+<!-- Menggunakan HTML Accessibility: Menambah navigasi yang jelas -->
+<section id="fitur-canggih" aria-labelledby="header-api">
+    <h2 id="header-api">Fitur Canggih Toko Kami (HTML APIs)</h2>
+    
+    <!-- Contoh Penerapan Geolocation: Mengetahui Lokasi Pelanggan -->
+    <div style="border: 1px dashed orange; padding: 15px;">
+        <p>Klik tombol di bawah untuk mengisi alamat otomatis berdasarkan lokasi Anda:</p>
+        <button onclick="getLocation()">Dapatkan Lokasi Saya</button>
+        <p id="tampilan-lokasi">Lokasi belum terdeteksi.</p>
+    </div>
+
+    <br>
+
+    <!-- Contoh Penerapan Drag and Drop: Seru untuk memilih bonus -->
+    <div style="border: 1px solid #ccc; padding: 15px;">
+        <p>Tarik kado ini ke kotak belanja untuk dapat diskon!</p>
+        <!-- Objek yang bisa ditarik -->
+        <img src="bonus.png" id="bonus" draggable="true" ondragstart="drag(event)" width="50" alt="Bonus Kripik">
+        
+        <!-- Wadah penampung -->
+        <div id="keranjang" ondrop="drop(event)" ondragover="allowDrop(event)" 
+             style="width: 100px; height: 50px; border: 2px solid green; margin-top: 10px; text-align: center;">
+             Keranjang
+        </div>
+    </div>
+</section>
+
+<!-- Script sederhana untuk menjalankan logika API di atas -->
+<script>
+    // Logika Geolocation (Materi HTML Geolocation)
+    var x = document.getElementById("tampilan-lokasi");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Browser Anda tidak mendukung Geolocation.";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude + " (Data siap dikirim ke Form!)";
+    }
+
+    // Logika Drag and Drop (Materi HTML Drag and Drop)
+    function allowDrop(ev) { ev.preventDefault(); }
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+        alert("Selamat! Anda mendapatkan diskon tambahan.");
+    }
+
+    // Konsep Web Storage: Menyimpan Nama User agar tidak hilang
+    // Ini akan berjalan otomatis di latar belakang browser
+    localStorage.setItem("toko", "Kripik Pisang Floja");
+</script>
+
+<hr>
+
+<!-- Bagian Summary & Accessibility -->
+<footer>
+    <nav aria-label="Footer Navigation">
+        <a href="quiz.html">Ikuti Quiz Kripik</a> | 
+        <a href="interview.html">Persiapan Kerja</a> | 
+        <a href="certificate.html">Cek Sertifikat Belanja</a>
+    </nav>
+    <p><i>Website ini dioptimalkan untuk HTML Accessibility agar semua orang bisa memesan.</i></p>
+</footer>

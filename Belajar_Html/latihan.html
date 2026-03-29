@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Mandiri</title>
+</head>
+
+<body>
+    <header id="atas">
+        <h1>Latihan Mandiri</h1>
+        <svg width="100" height="100">
+            <circle cx="90" cy="90" r="60" stroke="blue" stroke-width="8" fill="lightblue" />
+            <text x="70%" y="55%" text-anchor="middle" fill="black" font-size="12px" dy=".3em">EMAN</text>
+        </svg>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#atas">Kembali ke Atas</a></li>
+            <li><a href="#form">formulir Pemesanan</a></li>
+            <li><a href="#lokasi">Lihat Lokasi</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <section id="pesanan">
+        <form action="simpan-kopi.php" method="get">
+            <fieldset>
+                <legend>Data Pelanggan</legend>
+                <label for="nama">Nama Lengkap:</label><br>
+                <input type="text" id="nama" name="user_nama" placeholder="Contoh: Emanuel Matroni Ndiwa" required autofocus>
+                <br><br>
+
+                <label for="alamat">Alamat Pengiriman:</label><br>
+                <textarea id="alamat" name="alamat" rows="4" cols="50" required></textarea>
+                 <br><br>
+                 <label>Jenis Kopi</label>
+                <select name="kopi" id="kopi">
+                    
+                    <option value="kopi hitam">Kopi Hitam</option>
+                    <option value="kopi susu">Kopi Susu</option>
+                    <option value="kopi gula">Kopi Gula</option>
+
+                </select>
+                <label>Ukuran Gelas</label>
+                <input type="radio" name="ukuran" value="kecil" checked> Kecil
+                <input type="radio" name="ukuran" value="sedang"> Sedang
+                <input type="radio" name="ukuran" value="besar"> Besar
+                 <br><br>
+                <label>Tambahan Topping</label>
+                <input type="checkbox" name="topping" value="boba"> gula
+                <input type="checkbox" name="topping" value="coklat"> susu
+                <input type="checkbox" name="topping" value="keju"> coklat
+                <input type="submit" value="Pesan Sekarang">
+                <br><br>
+            </fieldset>
+        </form>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2024 Emanuel Matroni Ndiwa</p>
+
+    </footer>
+
+</body>
+
+</html>

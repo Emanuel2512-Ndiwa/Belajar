@@ -1,0 +1,308 @@
+/* --- 1. ATURAN GLOBAL & RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf5e6;
+    color: #5D4037;
+    line-height: 1.6;
+}
+
+/* --- 1. BERI NAMA PADA MASING-MASING KOTAK --- */
+.container-form {
+    grid-area: form;
+}
+
+.daftar-harga {
+    grid-area: harga;
+}
+
+.info-teknis {
+    grid-area: info;
+}
+
+/* --- 2. ATUR TATA LETAK DI INDUK --- */
+.layout-utama {
+    display: grid;
+    gap: 25px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    /* LOGIKA: Kita buat 2 kolom (Kiri dan Kanan) */
+    /* Baris 1: Form di kiri, Harga di kanan */
+    /* Baris 2: Form tetap di kiri (span), Info di kanan */
+    grid-template-areas:
+        "form harga"
+        "form info";
+
+    grid-template-columns: 1.2fr 1fr;
+    /* Kolom kiri sedikit lebih lebar */
+    align-items: start;
+}
+
+/* RESPONSIVE: Di HP, tumpuk semua ke bawah */
+@media screen and (max-width: 850px) {
+    .layout-utama {
+        grid-template-areas:
+            "form"
+            "harga"
+            "info";
+        grid-template-columns: 1fr;
+    }
+}
+
+/* EFISIENSI: Satukan semua pengaturan kotak yang sama di sini */
+.container-form,
+.daftar-harga,
+.info-teknis {
+    flex: 1;
+    /* Membagi ruang sama rata */
+    min-width: 320px;
+    /* Batas terkecil agar tidak gepeng */
+    max-width: 450px;
+    /* Batas terbesar agar tetap elegan */
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #5D4037;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Efisiensi: Warna khusus untuk area bantuan & tabel agar beda dari form */
+.daftar-harga,
+.info-teknis {
+    background-color: #fcfcfc;
+}
+
+/* --- 3. KOMPONEN SPESIFIK --- */
+
+.judul-utama {
+    text-align: center;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+input:focus,
+select:focus {
+    border-color: #5D4037;
+    outline: 2px solid #8D6E63;
+    outline-offset: 3px;
+}
+
+button {
+    background-color: #5D4037;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e2723;
+    letter-spacing: 1px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #5D4037;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #5D4037;
+    color: white;
+}
+
+/* :nth-child(even) - Zebra stripe (baris genap) */
+tr:nth-child(even) {
+    background-color: #fdf5e6;
+}
+
+/* :last-child - Baris terakhir tabel (opsional enhancement) */
+tr:last-child {
+    font-weight: bold;
+    /* Memberi penekanan pada baris akhir */
+}
+
+/* Computer Code Styling */
+pre {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    border-left: 4px solid #8D6E63;
+}
+
+kbd {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 0 #bbb;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+
+samp {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* 1. ::placeholder - Membuat placeholder lebih elegan */
+input::placeholder,
+select::placeholder {
+    color: #a38c7e;
+    /* Warna coklat muda yang matching tema */
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* 2. ::first-letter - Efek drop cap pada judul utama */
+.judul-utama::first-letter {
+    font-size: 3.5rem;
+    color: #5D4037;
+    font-weight: bold;
+    line-height: 1;
+
+}
+
+/* 3. ::selection - Warna highlight teks yang dipilih user */
+::selection {
+    background-color: #8D6E63;
+    color: white;
+}
+
+/* --- LOGIKA NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* Logika: Logo di kiri, Menu di kanan */
+    align-items: center;
+    background-color: #5D4037;
+    /* Warna coklat khas Floja */
+    padding: 15px 50px;
+    position: sticky;
+    /* Logika: Menu tetap nempel saat di-scroll */
+    top: 0;
+    z-index: 1000;
+    /* Logika: Harus paling depan (di atas elemen lain) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    /* Logika: Membuat list jadi berjejer ke samping */
+    list-style: none;
+    /* Logika: Menghilangkan titik-titik (bullet) list */
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* Logika: Menghilangkan garis bawah pada link */
+    color: #fdf5e6;
+    /* Warna krem agar kontras */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
+    /* Logika: Berubah warna saat disentuh (interaktif) */
+}
+
+/* RESPONSIVE: Di HP, menu akan otomatis ke tengah */
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+}
+
+/* Sembunyikan isi dropdown secara default
+anak sembunyikan */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* Agar muncul melayang di bawah menu utama */
+    background-color: #fdf5e6;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    /* Pastikan di atas elemen lain */
+    list-style: none;
+    padding: 0;
+    border-radius: 8px;
+}
+
+/* Tampilkan isi dropdown saat menu induk disentuh
+induk hover anak tampilkan  */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style untuk link di dalam dropdown 
+rapikan*/
+.dropdown-content li a {
+    color: #5D4037;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Efek saat pilihan dropdown disorot */
+.dropdown-content li a:hover {
+    background-color: #8D6E63;
+    color: white;
+}

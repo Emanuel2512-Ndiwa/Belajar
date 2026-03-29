@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, sans-serif;
+   
+
+}
+
+#KartuNama {
+    width: 350px;           /* Ukuran ideal kartu */
+    margin: 20px auto;      /* Ke tengah layar */
+    padding: 40px;          /* Ruang napas di dalam kartu */
+    border: 4px solid burlywood;
+    border-radius: 15px;    /* Sudut elegan */
+    background: rgb(80, 80, 116);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+
+#profil {
+    width: 120px;           /* Lebar foto cukup 120px */
+    height: 120px;          /* Tinggi harus sama agar bulat */
+    border-radius: 50%;     /* Bikin bulat sempurna */
+    object-fit: cover;      /* MOTONG GAMBAR OTOMATIS (Solusi gambar melar) */
+    border: 3px solid #5D4037;
+    margin-bottom: 30px;    /* Jarak ke nama di bawahnya */
+}
+#Judul {
+
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 60px;
+   
+    padding: 50px;
+
+}
+
+#penutup {
+    font-size: 14px;
+    color: #666;
+}

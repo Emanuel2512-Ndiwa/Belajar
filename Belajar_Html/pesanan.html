@@ -1,0 +1,158 @@
+<!DOCTYPE html> <!-- Mendeklarasikan bahwa dokumen ini menggunakan standar HTML5 terbaru -->
+<html lang="en"> <!-- Tag pembuka HTML dengan atribut bahasa Inggris (bisa diganti ke "id" untuk Indonesia) -->
+
+<head> <!-- Bagian kepala dokumen untuk menyimpan informasi metadata (tidak tampil di layar) -->
+    <meta charset="UTF-8"> <!-- Menentukan pengodean karakter agar simbol dan huruf unik tampil benar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Membuat tampilan website otomatis menyesuaikan lebar layar HP (Responsive) -->
+    <title>Formulir Pesanan</title> <!-- Judul yang muncul pada tab di bagian atas browser -->
+</head>
+
+<body> <!-- Bagian utama website di mana semua konten visual diletakkan -->
+
+    <form action="/submit_pesanan" method="post"> <!-- Kontainer formulir awal; data dikirim ke '/submit_pesanan' dengan metode POST (aman) -->
+        
+        <!-- 1. Input Teks: Komponen untuk menerima input tulisan singkat dari user -->
+        <label>Nama Anda:</label><br> <!-- Label untuk memberi tahu user apa yang harus diisi -->
+        <input type="text" name="nama_pembeli" placeholder="Ketik nama di sini"><br><br> <!-- Kotak teks dengan petunjuk (placeholder) di dalamnya -->
+
+        <!-- 2. Input Radio: Pilihan bulat di mana user hanya boleh memilih SATU opsi -->
+        <label>Metode Pengambilan:</label><br>
+        <input type="radio" name="ambil" value="kirim"> Kirim ke Rumah <!-- Opsi pertama radio button -->
+        <input type="radio" name="ambil" value="ambil_sendiri"> Ambil di Toko<br><br> <!-- Opsi kedua radio button -->
+
+        <!-- 3. Input Checkbox: Pilihan kotak centang di mana user boleh memilih banyak opsi sekaligus -->
+        <label>Tambahan Toping (Bisa pilih banyak):</label><br>
+        <input type="checkbox" name="toping" value="keju"> Ekstra Keju <!-- Pilihan centang pertama -->
+        <input type="checkbox" name="toping" value="coklat"> Ekstra Coklat<br><br> <!-- Pilihan centang kedua -->
+
+        <!-- 4. Input Submit: Tombol khusus yang berfungsi mengeksekusi pengiriman seluruh data form -->
+        <input type="submit" value="Pesan Sekarang"> 
+
+        <!-- 5. Input Button: Tombol netral yang menjalankan fungsi tertentu (JavaScript) saat diklik -->
+        <input type="button" value="Bantuan" onclick="alert('Hubungi WA: 0812345678')"> <!-- Menjalankan perintah 'alert' atau pesan munculan -->
+    </form>
+
+    <header style="text-align: center;"> <!-- Bagian kepala halaman yang diatur agar teksnya berada di tengah (Center) -->
+        <h1>Formulir Pesanan Kripik Pisang Floja</h1> <!-- Judul utama website (Level 1) -->
+        
+        <!-- HTML Graphics: Menggunakan SVG untuk membuat logo vektor yang tidak pecah saat di-zoom -->
+        <svg width="100" height="100"> <!-- Kanvas SVG dengan ukuran 100x100 piksel -->
+            <circle cx="50" cy="50" r="40" stroke="orange" stroke-width="4" fill="yellow" /> <!-- Menggambar lingkaran kuning dengan garis tepi oranye -->
+            <text x="50%" y="55%" text-anchor="middle" fill="black" font-size="12px" dy=".3em">Kripik Pisang</text> <!-- Meletakkan teks tepat di tengah lingkaran -->
+        </svg>
+    </header>
+
+    <hr> <!-- Garis horizontal untuk memisahkan bagian header dengan konten utama -->
+
+    <section id="form-pemesanan"> <!-- Bagian (Section) khusus untuk formulir dengan identitas (ID) unik -->
+        <h2>Pesan Kripik Custom </h2> <!-- Judul sub-bagian (Level 2) -->
+        
+        <form action="/proses.data.php" method="post"> <!-- Formulir utama untuk pemesanan kripik custom -->
+            
+            <fieldset> <!-- Elemen untuk mengelompokkan beberapa input yang berkaitan agar terlihat rapi -->
+                <legend>Data Pesanan</legend> <!-- Judul/Label kecil yang menempel di garis tepi fieldset -->
+                
+                <label for="nama">Nama Lengkap:</label><br>
+                <input type="text" id="nama" name="user_nama" placeholder="Contoh: Emanuel Matroni Ndiwa" required autofocus> <!-- 'required' (wajib isi) & 'autofocus' (langsung aktif saat halaman dibuka) -->
+                <br><br>
+
+                <label for="alamat">Alamat Pengiriman:</label><br>
+                <textarea id="alamat" name="alamat" rows="4" cols="50" required></textarea> <!-- Input teks panjang (Multi-line) untuk alamat -->
+                <br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="user_email" placeholder="Contoh: emanuel@example.com" required> <!-- Validasi otomatis format email oleh browser -->
+                <br><br>
+            </fieldset>
+
+            <fieldset> <!-- Kelompok input kedua untuk detail spesifikasi produk -->
+                <legend>Detail Pesanan</legend>
+                
+                <label>pilih Jenis Kripik:</label>
+                <select name="jenis_kripik" required> <!-- Menu pilihan jatuh (Dropdown) -->
+                    <option value="">Pilih Jenis</option> <!-- Opsi default yang kosong -->
+                    <option value="original">Original</option>
+                    <option value="keju">Keju</option>
+                    <option value="coklat">Coklat</option>
+                </select><br><br>
+
+                <label for="jumlah">Jumlah (Bungkusan):</label><br>
+                <input type="number" id="jumlah" name="qty" min="1" max="200" value="2" required> <!-- Input khusus angka dengan batas minimal 1 dan maksimal 200 -->
+                <br><br>
+
+                <label>Tanggal Pengambilan</label>
+                <input type="date" name="tanggal_ambil" required> <!-- Menampilkan kalender otomatis untuk memilih tanggal -->
+                <br><br>
+
+                <label>Warna Tulisan Di Kemasan:</label>
+                <input type="color" name="warna_tulisan" value="#ff0000"> <!-- Menampilkan pemilih warna (Color Picker) -->
+                <br><br>
+
+                <label>catatan tambahan:</label><br>
+                <textarea name="pesanan" rows="4" cols="30" placeholder="Contoh: Tolong bungkus dengan kertas coklat..."></textarea>
+                <br><br>
+            </fieldset>
+
+            <br>
+
+            <section id="galeri-media"> <!-- Bagian untuk konten multimedia (Video, Audio, YouTube) -->
+                <h2>Dokumentasi Dapur Kami (Media)</h2>
+                <p>Lihat Proses Pembuatan Kripik Pisang Kami</p>
+                
+                <!-- HTML Media: Video player bawaan HTML5 -->
+                <video width="320" height="240" controls> <!-- 'controls' memunculkan tombol play, pause, dan volume -->
+                    <source src="dokumentasi.mp4" type="video/mp4"> <!-- Menentukan sumber file video -->
+                    Browser Anda tidak mendukung tag video. <!-- Pesan ini tampil jika browser sudah sangat tua -->
+                </video>
+
+                <p>dengarkan jingle toko kami </p>
+                
+                <!-- HTML Media: Audio player bawaan HTML5 -->
+                <audio controls>
+                    <source src="jingle.mp3" type="audio/mpeg"> <!-- Menentukan sumber file suara -->
+                    Browser Anda tidak mendukung tag audio.
+                </audio>
+
+                <h3>review pelanggan di youtube</h3>
+                <!-- HTML YouTube: Menggunakan iframe untuk menyematkan video dari luar website (YouTube) -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="youtube video" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <hr>
+
+            <section id="grafis-canvas"> <!-- Bagian untuk grafik dinamis menggunakan JavaScript -->
+                <h2>grafis penjualan toko kami</h2>
+
+                <!-- HTML Graphics: Canvas digunakan sebagai 'papan tulis' untuk menggambar lewat kode -->
+                <canvas id="grafikPenjualan" width="400" height="200" style="border:1px solid #d3d3d3;"></canvas>
+                
+                <script> <!-- Tag untuk menuliskan perintah JavaScript -->
+                    var canvas = document.getElementById('grafikPenjualan'); // Mengambil elemen canvas berdasarkan ID
+                    var ctx = canvas.getContext('2d'); // Menentukan mode gambar 2 dimensi
+
+                    // Data penjualan (ini adalah array data yang akan digambar)
+                    var penjualan = [10, 15, 8, 20, 12];
+                    var labels = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+
+                    // Perulangan (Looping) untuk menggambar grafik batang otomatis berdasarkan data
+                    for (var i = 0; i < penjualan.length; i++) {
+                        ctx.fillStyle = 'orange'; // Memberi warna pada batang grafik
+                        ctx.fillRect(i * 80 + 30, canvas.height - penjualan[i] * 10, 50, penjualan[i] * 10); // Membuat kotak batang
+                        ctx.fillStyle = 'black'; // Memberi warna pada teks label
+                        ctx.fillText(labels[i], i * 80 + 45, canvas.height - 5); // Menuliskan teks hari di bawah batang
+                    }
+                </script>
+            </section>
+            <!-- Tombol akhir untuk mengirim seluruh data fieldset di atas -->
+            <input type="submit" value="Kirim Pesanan">
+        </form>
+    </section>
+
+    <footer> <!-- Bagian kaki halaman untuk informasi hak cipta dan penutup -->
+        <p>&copy; 2024 Kripik Pisang Floja. All rights reserved.</p> <!-- Menampilkan simbol copyright -->
+        <p>Made with love &#10084; in Yogyakarta</p> <!-- Menampilkan simbol hati menggunakan kode HTML Entities -->
+        <p><i>Terima kasih telah berkunjung!</i></p> <!-- Teks miring (Italic) -->
+    </footer>
+
+</body>
+</html>

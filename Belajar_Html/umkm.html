@@ -1,0 +1,257 @@
+<!DOCTYPE html> <!-- Deklarasi tipe dokumen untuk memberi tahu browser bahwa ini adalah standar HTML5 -->
+<html lang="id"> <!-- Tag akar (root) yang membungkus seluruh konten dengan atribut bahasa Indonesia (id) -->
+
+<head> <!-- Bagian khusus untuk menyimpan informasi mesin/browser yang tidak terlihat langsung oleh pengunjung -->
+    <meta charset="UTF-8">
+    <!-- Menentukan set karakter UTF-8 agar browser bisa membaca simbol, emoji, dan aksen dengan benar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pengaturan krusial agar tampilan website otomatis menyesuaikan lebar layar perangkat (HP/Tablet/Laptop) -->
+    <title>Kripik Pisang Floja</title> <!-- Judul halaman yang akan muncul di tab jendela browser -->
+
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <!-- Menampilkan ikon kecil (favicon) di samping judul pada tab browser -->
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        /* Mengubah jenis huruf seluruh halaman menjadi tanpa sirip agar lebih modern dan mudah dibaca */
+        .promosi {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Membuat kelas 'promosi' yang bisa digunakan berulang kali untuk teks berwarna hijau dan tebal */
+        #kontak {
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+
+        /* Memberikan warna latar abu-abu muda dan jarak dalam (padding) khusus untuk elemen dengan ID 'kontak' */
+    </style>
+</head>
+
+<body> <!-- Tempat dimulainya konten utama website yang akan dilihat dan berinteraksi dengan pengguna -->
+
+    <header> <!-- Bagian atas website yang biasanya berisi nama toko, slogan, dan menu navigasi -->
+        <h1>Kripik Pisang Floja</h1>
+        <!-- Judul tingkat 1 (tertinggi): Identitas utama website untuk mesin pencari (SEO) -->
+        <p><em>Kelezatan Asli dari Resep Warisan</em></p>
+        <!-- Memberikan penekanan miring (Emphasis) pada slogan untuk kesan estetis -->
+
+        <nav> <!-- Elemen navigasi yang menandakan kumpulan link penting untuk berpindah halaman atau bagian -->
+            <ul> <!-- Unordered List: Daftar poin tanpa nomor untuk menu navigasi -->
+                <!-- Link internal menggunakan simbol '#' yang merujuk pada ID elemen di halaman yang sama -->
+                <li><a href="#produk">Produk Kami</a></li>
+                <li><a href="#order">Pesan Sekarang</a></li>
+                <li><a href="#kontak">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- LANJUTAN PROJECT KRIPIK PISANG FLOJA -->
+
+    <hr>
+
+    <!-- Menggunakan HTML Accessibility: Menambah navigasi yang jelas -->
+    <section id="fitur-canggih" aria-labelledby="header-api">
+        <h2 id="header-api">Fitur Canggih Toko Kami (HTML APIs)</h2>
+
+        <!-- Contoh Penerapan Geolocation: Mengetahui Lokasi Pelanggan -->
+        <div style="border: 1px dashed orange; padding: 15px;">
+            <p>Klik tombol di bawah untuk mengisi alamat otomatis berdasarkan lokasi Anda:</p>
+            <button onclick="getLocation()">Dapatkan Lokasi Saya</button>
+            <p id="tampilan-lokasi">Lokasi belum terdeteksi.</p>
+        </div>
+
+        <br>
+
+        <!-- Contoh Penerapan Drag and Drop: Seru untuk memilih bonus -->
+        <div style="border: 1px solid #ccc; padding: 15px;">
+            <p>Tarik kado ini ke kotak belanja untuk dapat diskon!</p>
+            <!-- Objek yang bisa ditarik -->
+            <img src="bonus.png" id="bonus" draggable="true" ondragstart="drag(event)" width="50" alt="Bonus Kripik">
+
+            <!-- Wadah penampung -->
+            <div id="keranjang" ondrop="drop(event)" ondragover="allowDrop(event)"
+                style="width: 100px; height: 50px; border: 2px solid green; margin-top: 10px; text-align: center;">
+                Keranjang
+            </div>
+        </div>
+    </section>
+
+    <!-- Script sederhana untuk menjalankan logika API di atas -->
+    <script>
+        // Logika Geolocation (Materi HTML Geolocation)
+        var x = document.getElementById("tampilan-lokasi");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Browser Anda tidak mendukung Geolocation.";
+            }
+        }
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude + " (Data siap dikirim ke Form!)";
+        }
+
+        // Logika Drag and Drop (Materi HTML Drag and Drop)
+        function allowDrop(ev) { ev.preventDefault(); }
+        function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            alert("Selamat! Anda mendapatkan diskon tambahan.");
+        }
+
+        // Konsep Web Storage: Menyimpan Nama User agar tidak hilang
+        // Ini akan berjalan otomatis di latar belakang browser
+        localStorage.setItem("toko", "Kripik Pisang Floja");
+    </script>
+
+    <hr>
+
+    <!-- Bagian Summary & Accessibility -->
+    <footer>
+        <nav aria-label="Footer Navigation">
+            <a href="quiz.html">Ikuti Quiz Kripik</a> |
+            <a href="interview.html">Persiapan Kerja</a> |
+            <a href="certificate.html">Cek Sertifikat Belanja</a>
+        </nav>
+        <p><i>Website ini dioptimalkan untuk HTML Accessibility agar semua orang bisa memesan.</i></p>
+    </footer>
+
+    <hr> <!-- Horizontal Rule: Membuat garis pembatas horizontal untuk memisahkan antar bagian besar -->
+
+    <main> <!-- Menandakan bahwa isi di dalam tag ini adalah konten unik dan utama dari halaman ini -->
+
+        <section id="produk"> <!-- Bagian (Section) produk yang diberi ID agar bisa diakses oleh navigasi di atas -->
+            <h2>H2: Produk Unggulan Kami</h2> <!-- Judul tingkat 2: Menjelaskan topik utama dari section ini -->
+            <p>Kami menyediakan berbagai macam kripik pisang dan kue yang dibuat segar setiap hari.</p>
+
+            <!-- Menampilkan gambar produk dengan pengaturan lebar dan tinggi tetap (pixel) serta teks alternatif (alt) jika gambar gagal dimuat -->
+            <img src="kripik.jpg" alt="Kripik Pisang" width="150" height="150">
+
+            <h3>H3: Kripik Pisang</h3> <!-- Judul tingkat 3: Digunakan untuk nama produk spesifik di bawah H2 -->
+
+            <p>Terbuat dari pisang utuh pilihan, <br>
+                <!-- Tag Line Break: Memaksa teks di sebelahnya turun ke baris baru tanpa membuat paragraf baru -->
+                <strong>sangat sehat</strong> untuk sarapan.
+            </p> <!-- Memberikan penekanan tebal (Strong) untuk menonjolkan nilai kesehatan -->
+
+            <!-- Tag <q> digunakan untuk kutipan singkat (short quote) yang otomatis akan ditambahkan tanda petik oleh browser -->
+            <p>Salah satu pelanggan berkata: <q>Kripik pisang ini adalah yang terbaik yang pernah saya coba.</q></p>
+
+            <!-- Atribut 'style' inline untuk mewarnai teks merah, dan <del> untuk mencoret harga lama -->
+            <p style="color:red;">Harga Spesial: <del>Rp 20.000</del> <strong>Rp 15.000</strong></p>
+        </section>
+
+        <hr>
+
+        <section> <!-- Bagian informasi tambahan mengenai keunggulan toko -->
+            <h2>H2: Kenapa Memilih Kami?</h2>
+            <ul> <!-- Daftar poin (bullet points) untuk fitur unggulan -->
+                <!-- Tag <code> memberikan gaya font monospace untuk menonjolkan istilah teknis atau unik -->
+                <li><code>Bahan Premium</code>: Kami hanya menggunakan bahan-bahan terbaik.</li>
+                <li>Higiene Terjamin: Proses pembuatan yang bersih.</li>
+                <li>Rasa Konsisten &trade;</li> <!-- Karakter entitas HTML untuk menampilkan simbol Trademark (TM) -->
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="order"> <!-- Bagian transaksi/harga -->
+            <h2>H2: Pesan Sekarang</h2>
+            <table border="1"> <!-- Membuat tabel dengan garis tepi tipis (border) untuk menyajikan data terstruktur -->
+                <caption>Tabel Harga Produk</caption>
+                <!-- Judul atau keterangan singkat yang berada tepat di atas tabel -->
+                <thead> <!-- Bagian kepala tabel untuk mendefinisikan nama-nama kolom -->
+                    <tr> <!-- Table Row: Baris dalam tabel -->
+                        <th>No</th> <!-- Table Header: Sel judul kolom (tebal dan rata tengah secara otomatis) -->
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Bagian tubuh tabel yang berisi baris data aktual -->
+                    <tr>
+                        <td>1</td> <!-- Table Data: Sel data biasa di dalam tabel -->
+                        <td>Kripik Pisang Basic</td>
+                        <td>Rp 15.000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Kripik Pisang Premium</td>
+                        <td>Rp 30.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Silakan isi formulir di bawah untuk memesan:</p>
+            <!-- Hyperlink untuk mengarahkan pengguna ke file 'pesanan.html' yang berisi formulir input -->
+            <a href="pesanan.html">Formulir Pesanan</a>
+        </section>
+
+        <hr>
+
+        <!-- Elemen <div> digunakan sebagai kontainer umum untuk mengelompokkan elemen tanpa makna semantik khusus -->
+        <div class="testimoni" style="border:1px solid #ccc; padding:10px;">
+            <h3>H3: Apa Kata Pelanggan?</h3>
+            <blockquote> <!-- Digunakan untuk kutipan panjang/blok teks yang biasanya menjorok ke dalam -->
+                "Kripik pisang ini sangat gurih tidak terlalu manis. Semua orang di pesta menyukainya."
+                <footer>- Citra, Yogyakarta</footer>
+                <!-- Menyebutkan sumber kutipan atau atribusi di dalam blockquote -->
+            </blockquote>
+        </div>
+
+        <hr>
+
+        <section id="lokasi"> <!-- Bagian integrasi peta eksternal -->
+            <h2>H2: Lokasi Kami</h2>
+            <p>Temukan kami di sini:</p>
+            <!-- Iframe: Bingkai untuk menampilkan konten dari website lain (Google Maps) di dalam website kita -->
+            <iframe src="https://www.google.com/maps/embed?..." width="600" height="450" style="border:0;"
+                allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <hr>
+
+        <section id="kontak"> <!-- Bagian informasi kontak toko -->
+            <h2>H2: Hubungi Kami</h2>
+            <address> <!-- Elemen khusus untuk menampilkan informasi kontak (biasanya tampil miring secara default) -->
+                Kripik Pisang Floja<br>
+                Jl. Cinderalas No. 12<br>
+                Yogyakarta, Indonesia<br>
+                <!-- Link email: Akan otomatis membuka aplikasi email pengguna (seperti Outlook/Gmail) saat diklik -->
+                Email: <a href="mailto:emanndiwa34@gmail.com">emanndiwa34@gmail.com</a>
+            </address>
+            <!-- Tag <abbr> untuk singkatan, atribut 'title' akan muncul sebagai tooltip saat kursor diarahkan ke teks -->
+            <p>Tanya kami tentang <abbr title="Toko Kripik Pisang Floja">KPJ</abbr> :)</p>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer> <!-- Bagian kaki website untuk informasi legal, hak cipta, dan link tambahan -->
+        <p>&copy; 2024 Kripik Pisang Floja. All rights reserved.</p> <!-- Karakter entitas untuk simbol Copyright -->
+        <p>Made with love &#10084; in Yogyakarta</p>
+        <!-- Karakter entitas untuk simbol hati (merah di beberapa browser) -->
+
+        <p><i>Terima kasih telah berkunjung!</i></p>
+        <!-- Tag <i> untuk memberikan gaya miring (Italic) sebagai penutup ramah -->
+
+        <!-- Link untuk mengunduh file dokumen PDF secara langsung -->
+        <a href="Laporan.pdf">Unduh Pricelist</a> |
+
+        <!-- Link ke halaman informasi teknis tentang standar web yang digunakan -->
+        <a href="tentang.html">Tentang Standard Web Kami</a>
+    </footer>
+
+    <script> <!-- Area untuk menulis kode JavaScript (logika interaktif), saat ini masih dikosongkan (dikomentari) -->
+        // console.log("Halaman ini murni menggunakan HTML dasar.");
+    </script>
+</body>
+
+</html>
