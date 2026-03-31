@@ -1,19 +1,19 @@
 package OOP;
 
 public class Mobil {
-    private String[] merk;
-    private String[] warna;
-    private int []tahun;
-    private String []NamaPemilik;
+    private String merk;
+    private String warna;
+    private int tahun;
+    private String NamaPemilik;
 
-    public Mobil(String[] merk, String[] warna, int []tahun, String []NamaPemilik) {
+    public Mobil(String merk, String  warna, int tahun, String NamaPemilik) {
         this.merk = merk;
         this.warna = warna;
         this.tahun = tahun;
         this.NamaPemilik = NamaPemilik;
     }
     public String getNamaPemilik() {
-        return []NamaPemilik;
+        return NamaPemilik;
     }
     public void setNamaPemilik(String NamaPemilik) {
         this.NamaPemilik = NamaPemilik;
