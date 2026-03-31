@@ -1,3 +1,4 @@
+package Basic;
 public class PassArray {
     // Main method: tempat program dimulai
     public static void main(String[] args) {
@@ -50,14 +51,21 @@ public class PassArray {
              * variabel array2,
              * alamat ini menjadi kabel penghubung antara array2 dan array,
              * karena ada kabel penghubung maka dia punya akses ke array.
-             * tetapi lokasi mereka itu berbeda si array2 itu hanya variabel lokal yang
+             * tetapi lokasi mereka itu berbeda si array2 itu hanya variabel lokal aaaaaaaaaaaa
              * menyimpan alamat array asli, sedangkan array itu sendiri adalah objek yang
              * berada di heap memory.
              * karena array2 itu hanya variabel lokal yang menyimpan alamat array asli, maka
              * ketika kita mengubah isi di alamat tersebut (yaitu array asli) melalui
              * array2, maka perubahan itu akan terlihat di array asli juga, karena mereka
              * terhubung melalui alamat yang sama.
+             * UBAH ISI OBJECT
+             * → berubah
              * 
+             * GANTI OBJECT
+             * → tidak berubah
+             * 
+             * PRIMITIVE
+             * → tidak berubah
              */
             array2[counter] *= 2; // Mengalikan isi di alamat tersebut dengan 2
         }

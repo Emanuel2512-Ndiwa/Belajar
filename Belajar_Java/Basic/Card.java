@@ -1,3 +1,4 @@
+package Basic;
 public class Card { // Nama Class: Kartu
     // Variabel Instans (Atribut)
     // 'private' berarti hanya bisa diakses di dalam class ini

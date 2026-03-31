@@ -1,3 +1,4 @@
+package Basic;
 import java.security.SecureRandom;
 public class DeckOfCard {
     private Card[] deck;
