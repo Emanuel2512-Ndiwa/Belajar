@@ -37,10 +37,17 @@ public class Universitas {
     }
 
     public void displayInfoUniversitas() {
-        System.out.println("Nama Universitas: " + namaUniversitas);
-        System.out.println("Lokasi Universitas: " + lokasiUniversitas);
-        System.out.println("Akreditasi Universitas: " + AkreditasiUniversitas);
+        System.out.println();
+        System.out.println();
+        System.out.println("=================================");
+        System.out.println("Informasi Universitas");
+        System.out.println("=================================");
+
+        System.out.println("Nama Universitas\t: " + namaUniversitas);
+        System.out.println("Lokasi Universitas\t: " + lokasiUniversitas);
+        System.out.println("Akreditasi Universitas\t: " + AkreditasiUniversitas);
         System.out.println("================================");
+        System.out.println();
         ruangan();
     }
 
@@ -50,13 +57,19 @@ public class Universitas {
                 { "Sekretariat Informatika", "Sekretariat Fisika", "Sekretariat Kimia" },
                 { "Ruang Dosen Informatika", "Ruang Dosen Fisika", "Ruang Dosen Kimia" }
         };
-
+        System.out.println("=================================");
+        System.out.println("Daftar Ruangan:");
+        System.out.println("=================================");
         for (String[] baris : ruangan) {
             for (String ruang : baris) {
-                System.out.println("Daftar Ruangan:");
-                System.out.println(ruang);
+
+                System.out.printf("%-30s", ruang);
             }
+            System.out.println();
         }
+        System.out.println();
+        System.out.println("=================================");
+        System.out.println();
 
     }
 
