@@ -16,8 +16,19 @@ public class Dosen extends Universitas {
         System.out.println("Data DIri Dosen");
         System.out.println("================================");
 
-        System.out.println("Nama Dosen: " + namaDosen);
-        System.out.println("Mata Kuliah: " + mataKuliah);
+        System.out.println("Nama Dosen\t: " + namaDosen);
+        System.out.println("Mata Kuliah\t: " + mataKuliah);
+    }
+
+    @Override
+    public void Tugas() {
+
+        System.out.println("Tugas Dosen");
+        System.out.println("================================");
+
+        System.out.println("1. Mengajar Mata Kuliah " + mataKuliah);
+        System.out.println("2. Membimbing Mahasiswa");
+        System.out.println("3. Melakukan Penelitian");
     }
 
 }

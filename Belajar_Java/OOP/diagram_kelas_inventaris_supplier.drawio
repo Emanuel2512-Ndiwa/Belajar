@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2026-04-02T00:10:00.000Z" agent="OpenClaw" version="24.7.17">
+  <diagram id="inventarisSupplier" name="Page-1">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="inventaris" value="&lt;b&gt;Inventaris&lt;/b&gt;&lt;hr/&gt;- daftarBarang : Barang[]&lt;br/&gt;- daftarSupplier : Supplier[]&lt;hr/&gt;+ tambahSupplier()&lt;br/&gt;+ tampilkanSemuaSupplier()&lt;br/&gt;+ cariSupplierById()&lt;br/&gt;+ tambahBarang()&lt;br/&gt;+ tampilkanSemuaBarang()&lt;br/&gt;+ cariBarangByKode()&lt;br/&gt;+ jualBarang()&lt;br/&gt;+ hitungTotalNilaiStok()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="300" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="barang" value="&lt;b&gt;Barang&lt;/b&gt;&lt;hr/&gt;- kodeBarang : String&lt;br/&gt;- namaBarang : String&lt;br/&gt;- harga : int&lt;br/&gt;- stok : int&lt;br/&gt;- supplier : Supplier&lt;hr/&gt;+ tambahStok()&lt;br/&gt;+ kurangiStok()&lt;br/&gt;+ hitungNilaiStok()&lt;br/&gt;+ tampilkanInfo()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="280" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="supplier" value="&lt;b&gt;Supplier&lt;/b&gt;&lt;hr/&gt;- idSupplier : String&lt;br/&gt;- namaSupplier : String&lt;br/&gt;- alamat : String&lt;br/&gt;- telepon : String&lt;hr/&gt;+ tampilkanInfo()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="700" y="390" width="260" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge1" value="aggregation" style="endArrow=none;html=1;startArrow=diamondThin;startFill=0;" edge="1" parent="1" source="inventaris" target="barang">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge2" value="aggregation" style="endArrow=none;html=1;startArrow=diamondThin;startFill=0;" edge="1" parent="1" source="inventaris" target="supplier">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge3" value="association" style="endArrow=block;html=1;" edge="1" parent="1" source="barang" target="supplier">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
