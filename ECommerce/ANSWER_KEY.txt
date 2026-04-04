@@ -1,0 +1,1114 @@
+================================================================================
+            ANSWER KEY & SOLUTION GUIDE
+            Fundamental Programming & OOP Challenge Collection
+================================================================================
+
+BAGIAN 1: KUNCI JAWABAN SOAL PILIHAN GANDA
+════════════════════════════════════════════════════════════════════════════
+
+TOPIK: LOOPING FUNDAMENTALS
+────────────────────────────────────────────────────────────────────────────
+
+[1.1] JAWABAN: C ✓
+
+PENJELASAN:
+- for loop dengan i = 0; i < 5 akan menjalankan: 0, 1, 2, 3, 4
+- Setiap iterasi memanggil System.out.println() yang membuat new line
+- Output akan:
+  0 (enter)
+  1 (enter)
+  2 (enter)
+  3 (enter)
+  4 (enter)
+
+Kesalahan umum:
+- Option A: thinking output dalam satu baris (tidak paham println = new line)
+- Option B/D: misunderstand loop starting point (i dimulai 0, bukan 1)
+
+
+[1.2] JAWABAN: B ✓
+
+PENJELASAN:
+- FOR Loop: check kondisi dulu sebelum execute
+  Syntax: for (init; condition; increment) { body }
+  - Jika kondisi false, body tidak dijalankan
+  
+- DO-WHILE Loop: execute body dulu, baru check kondisi
+  Syntax: do { body } while (condition)
+  - Body minimal execute 1x, bahkan jika kondisi langsung false
+  
+Contoh:
+  int i = 5;
+  for (i = 5; i < 5; i++) { } // body tidak execute
+  
+  int j = 5;
+  do { } while (j < 5); // body execute 1x, baru check
+
+Kesalahan umum:
+- Mixing up execution order
+
+
+[1.3] JAWABAN: C ✓
+
+PENJELASAN:
+- for (int num : numbers) disebut for-each loop
+- Syntax: for (Type variable : collection)
+- Setiap iterasi, variable 'num' mendapat value dari array, bukan index
+- num menyimpan nilai elements secara berurutan: 10, 20, 30, 40, 50
+
+Kesalahan umum:
+- Option A: confuse array value dengan index
+- Option B: think syntax salah (valid syntax)
+- Option D: miscount jumlah element (5 element, bukan 6)
+
+
+[1.4] JAWABAN: C ✓
+
+PENJELASAN:
+sum = 0
+Iterasi:
+- i=1: sum = 0+1 = 1
+- i=2: sum = 1+2 = 3
+- i=3: sum = 3+3 = 6
+- i=4: sum = 6+4 = 10
+- i=5: sum = 10+5 = 15
+- i=6: sum = 15+6 = 21
+- i=7: sum = 21+7 = 28
+- i=8: sum = 28+8 = 36
+- i=9: sum = 36+9 = 45
+- i=10: sum = 45+10 = 55
+
+Rumus: Sum dari 1 sampai n = n × (n+1) / 2 = 10 × 11 / 2 = 55
+
+Kesalahan umum:
+- Option B (45): hitung sampai i=9 saja
+- Option D (15): hanya hitung sampai i=5
+
+
+[1.5] JAWABAN: B ✓
+
+PENJELASAN:
+Nested loop = loop dalam loop (outer loop dan inner loop)
+
+Option B:
+  for (int i = 0; i < 3; i++) {           // outer loop
+      for (int j = 0; j < 3; j++) {       // inner loop
+          System.out.println(i + " " + j);
+      }
+  }
+
+Execution:
+  i=0: j=0,1,2 → print "0 0" "0 1" "0 2"
+  i=1: j=0,1,2 → print "1 0" "1 1" "1 2"
+  i=2: j=0,1,2 → print "2 0" "2 1" "2 2"
+  
+Total 9 print statements
+
+Kesalahan umum:
+- Option A/C: single loop saja
+- Option D: empty loop (syntax error)
+
+
+[1.6] JAWABAN: B ✓
+
+PENJELASAN:
+for (int i = 5; i >= 1; i--)
+- Countdown loop dari 5 sampai 1
+- i = 5, 4, 3, 2, 1
+- Total 5 iterasi
+
+Kesalahan umum:
+- Option A (4 kali): forget menghitung i=5
+- Option C (6 kali): miscount
+- Option D: tidak paham condition >=
+
+
+[1.7] JAWABAN: B ✓
+
+PENJELASAN:
+int count = 0;
+do {
+    System.out.println(count);  // print 0
+    count++;                     // count = 1
+} while (count < 0);           // 1 < 0 ? false, exit
+
+Body execute 1x sebelum check kondisi
+
+Kesalahan umum:
+- Option A: confuse dengan regular loop yang tidak execute jika kondisi false
+- Option C: tidak paham do-while akan stop setelah 1x jika kondisi false
+
+
+[1.8] JAWABAN: B ✓
+
+PENJELASAN:
+Statement analysis:
+
+1. "FOR-EACH tidak bisa digunakan untuk mengubah nilai elemen array" 
+   ✓ BENAR. For-each membuat COPY nilai, perubahan tidak affect original array
+   ```
+   int[] arr = {1, 2, 3};
+   for (int num : arr) {
+       num = 0;  // change copy, tidak change arr
+   }
+   // arr masih {1, 2, 3}
+   ```
+
+2. "FOR-EACH lebih mudah dibaca dibanding FOR loop biasa"
+   ✓ BENAR. Syntax lebih clean, tidak perlu tracking index
+
+3. "FOR-EACH tidak bisa mengakses index elemen"
+   ✓ BENAR. Tidak ada variable index dalam for-each
+   Jika butuh index, harus pakai regular for loop
+
+4. "FOR-EACH hanya bekerja dengan array dan Collection"
+   ✓ BENAR. Hanya untuk Iterable (array, List, Set, dll)
+
+Jadi statement 2, 3, 4 benar → Jawaban B
+
+
+[2.1] JAWABAN: A ✓
+
+PENJELASAN:
+Inheritance = parent-child relationship antara classes
+- Child class mewarisi member (variable, method) dari parent class
+- Reduce code duplication
+- Enable polymorphism
+
+Syntax: public class Child extends Parent { }
+
+Kesalahan umum:
+- Option B: membuat method baru (bukan inheritance)
+- Option C: membuat multiple objects (instantiation, bukan inheritance)
+- Option D: menyembunyikan data (encapsulation, bukan inheritance)
+
+
+[2.2] JAWABAN: C ✓
+
+PENJELASAN:
+Statement analysis:
+
+A. "Mobil adalah child class dari Kendaraan" ✓ BENAR
+B. "Mobil mewarisi atribut 'warna' dari Kendaraan" ✓ BENAR
+C. "Kendaraan mewarisi atribut dari Mobil" ✗ SALAH (parent tidak warisi dari child)
+D. "Object Mobil bisa mengakses atribut 'warna'" ✓ BENAR
+
+Jawaban C adalah SALAH (pertanyaan: manakah yang SALAH)
+
+
+[2.3] JAWABAN: B ✓
+
+PENJELASAN:
+- extends = untuk inheritance normal (class to class)
+- implements = untuk interface implementation
+- inherits = bukan keyword Java
+- super = keyword untuk akses parent member, bukan define inheritance
+
+Syntax: public class Child extends Parent { }
+
+
+[2.4] JAWABAN: C ✓
+
+PENJELASAN:
+Keuntungan inheritance:
+
+✓ A. Code reusability - mengurangi duplikasi
+✓ B. Hierarchical structure - organize code
+✓ D. Maintenance - mudah modify
+✗ C. "Menurunkan performa" - SALAH
+   Inheritance tidak menurunkan performa, malah optimize
+
+Inheritance tidak ada negative impact ke performa dalam normal cases.
+
+Kesalahan umum:
+- Mengira inheritance = overhead
+
+
+[3.1] JAWABAN: B ✓
+
+PENJELASAN:
+Polymorphism = "Many Forms"
+- Object bisa have many forms/types
+- Bisa bertindak sebagai parent type atau actual type (runtime)
+
+Contoh: 
+  Animal animal = new Dog();  // Dog object tapi variable Animal
+  animal.sound();             // call Dog.sound(), bukan Animal.sound()
+
+Kesalahan umum:
+- Option A: method overloading (subset dari polymorphism, tapi tidak lengkap)
+- Option C: multiple class dengan nama sama (not allowed in Java)
+- Option D: multiple inheritance (Java tidak support)
+
+
+[3.2] JAWABAN: D ✓
+
+PENJELASAN:
+2 jenis Polymorphism:
+
+1. METHOD OVERLOADING (Compile-time Polymorphism)
+   - Sama method name, berbeda parameter
+   - Resolved saat compile time (compiler tahu mana yang dipanggil)
+
+2. METHOD OVERRIDING (Runtime Polymorphism)
+   - Child override parent method
+   - Resolved saat runtime (actual object type determine which method)
+
+Option A: Compile-time dan Runtime - NOT exactly correct term
+Option B: Static (compile-time) dan Dynamic (runtime) - CORRECT synonym
+Option C: Method overloading dan overriding - CORRECT
+Option D: Semua opsi correct dalam berbagai perspektif
+
+
+[3.3] JAWABAN: B ✓
+
+PENJELASAN:
+```
+Animal myAnimal = new Dog();
+myAnimal.sound();
+```
+
+- Variable type adalah Animal (parent)
+- Actual object type adalah Dog (child)
+- Runtime polymorphism: call Dog.sound() karena actual object Dog
+- Output: "Woof!"
+
+Ini adalah contoh perfect dari polymorphism at runtime.
+
+Kesalahan umum:
+- Option A: think call parent method (tidak, call actual type method)
+- Option C: valid syntax, polymorphism bekerja
+
+
+[3.4] JAWABAN: B ✓
+
+PENJELASAN:
+METHOD OVERRIDING:
+- Method di child class dengan signature SAMA seperti parent
+- @Override annotation (optional tapi recommended)
+- Polymorphism di runtime
+
+Contoh:
+  Parent: public void display() { ... }
+  Child: @Override public void display() { ... }
+
+Kesalahan umum:
+- Option A: method overloading (berbeda parameter)
+- Option C: tidak ada konsep "dipanggil berkali-kali"
+- Option D: return type sama harus dalam override
+
+
+[3.5] JAWABAN: A ✓
+
+PENJELASAN:
+METHOD OVERLOADING:
+- Sama method name
+- BERBEDA parameter (type, number, order)
+- Sama class atau child class
+- Compile-time polymorphism
+
+Contoh:
+  public void calculate(int a) { }
+  public void calculate(double a) { }
+  public void calculate(int a, int b) { }
+
+Kesalahan umum:
+- Option B: method overriding (override ≠ overloading)
+- Option C: multiple call (bukan overloading)
+- Option D: return type berbeda (return type tidak dianggap untuk overloading)
+
+
+[4.1] JAWABAN: B ✓
+
+PENJELASAN:
+Interface dalam OOP (bukan GUI):
+- Contract/specification untuk class
+- Define apa yang harus dilakukan (method signatures)
+- Abstract - tidak ada implementation
+- Enable polymorphism through multiple implementation
+
+Kesalahan umum:
+- Option A: confuse dengan GUI interface
+- Option D: interfaces bisa diinstansiate dengan anonymous class
+
+
+[4.2] JAWABAN: B ✓
+
+PENJELASAN:
+- extends = untuk inheritance (class)
+- implements = untuk interface implementation
+- inherits = bukan keyword
+- interface = bukan keyword untuk implement
+
+Syntax: public class MyClass implements Interface1, Interface2 { }
+
+
+[4.3] JAWABAN: C ✓
+
+PENJELASAN:
+Java TIDAK support multiple inheritance dari class, tapi SUPPORT multiple interface.
+
+Satu class bisa implement unlimited/banyak interface:
+```
+public class MyClass implements Interface1, Interface2, Interface3, ... {
+    // Must implement all methods dari semua interfaces
+}
+```
+
+Kesalahan umum:
+- Mixing up dengan class inheritance limitation
+
+
+[4.4] JAWABAN: B ✓
+
+PENJELASAN:
+```
+public interface Movable { ... }
+public class Car implements Movable { ... }
+```
+
+A. Car adalah subclass dari Movable → TIDAK BENAR (subclass adalah untuk inheritance)
+B. Car mengimplementasikan interface Movable → ✓ BENAR
+C. Movable adalah object konkret → TIDAK (abstract)
+D. Car tidak perlu implement move() → TIDAK (must implement)
+
+Jawaban B adalah BENAR.
+
+
+[4.5] JAWABAN: B ✓
+
+PENJELASAN:
+Perbedaan Abstract Class vs Interface:
+
+ABSTRACT CLASS:
+- Bisa punya constructor
+- Bisa punya state (non-final variables)
+- Bisa punya implemented methods
+- Single inheritance (extends)
+
+INTERFACE:
+- Tidak bisa punya constructor
+- Variabel harus final/constant
+- Semua method abstract (sampai Java 8, ada default)
+- Multiple implementation (implements)
+
+Option B adalah perbedaan utama yang paling meaningful.
+
+Kesalahan umum:
+- Option D: benar tapi bukan perbedaan utama
+
+
+[5.1] JAWABAN: B ✓
+
+PENJELASAN:
+Encapsulation = packing up data dan method dalam satu unit + kontrol akses
+- Menyembunyikan implementation details
+- Melindungi data dari akses tidak sah
+- Enable validation saat akses/modify
+
+Kesalahan umum:
+- Option A: size/efficiency (bukan tujuan encapsulation)
+- Option C: performansi (tidak berpengaruh)
+- Option D: menggabungkan (sudah terjadi otomatis)
+
+
+[5.2] JAWABAN: B ✓
+
+PENJELASAN:
+Access modifiers (dari paling ketat → paling terbuka):
+
+1. private (B - PALING KETAT)
+   - Hanya bisa diakses dari dalam class itu sendiri
+   
+2. default (package-private)
+   - Hanya package yang sama
+   
+3. protected
+   - Package yang sama + subclass dari package berbeda
+   
+4. public (A - PALING TERBUKA)
+   - Bisa diakses dari mana saja
+
+Jawaban B adalah paling ketat.
+
+
+[5.3] JAWABAN: D ✓
+
+PENJELASAN:
+```
+public class Person {
+    private int age;
+    
+    public int getAge() {           // Getter
+        return age;
+    }
+    
+    public void setAge(int age) {   // Setter dengan validasi
+        if (age > 0) {              // Validasi!
+            this.age = age;
+        }
+    }
+}
+```
+
+A. ✓ setAge() punya validasi sebelum set
+B. ✓ Data age private, tidak bisa akses langsung
+C. ✓ Ini adalah Encapsulation perfect example
+D. ✓ Semua statement benar
+
+Kesalahan umum:
+- Tidak paham bahwa validasi di setter adalah benefit encapsulation
+
+════════════════════════════════════════════════════════════════════════════
+BAGIAN 2: JAWABAN SOAL CERITA (SCENARIO-BASED)
+════════════════════════════════════════════════════════════════════════════
+
+[C1.1] JAWABAN: D ✓
+
+REASONING:
+Sistem manajemen pegawai dengan 2 tipe → semua konsep dibutuhkan:
+
+- INHERITANCE: Pegawai (parent) → Staff, Manager (child)
+  Alasan: Share common attributes (nama, ID, gaji hash)
+
+- INTERFACE: Payable, Reportable
+  Alasan: Define kontrak yang harus diimplementasikan
+
+- POLYMORPHISM: staff.getGaji() vs manager.getGaji() dinamis
+  Alasan: Gaji formula berbeda, tapi call method sama
+
+Jawaban D menggabungkan semua concept → solusi terbaik.
+
+Kesalahan umum:
+- Hanya pilih A saja (not mentioning interface/polymorphism)
+
+
+[C1.2] JAWABAN: A ✓
+
+REASONING:
+Kedua cara cocok untuk iterasi ArrayList:
+
+For loop (a):
+```
+ArrayList<Pegawai> pegawaiList = ...;
+for (int i = 0; i < pegawaiList.size(); i++) {
+    Pegawai p = pegawaiList.get(i);
+    // dapat akses index jika perlu
+}
+```
+Keuntungan: bisa akses index, control flow lebih explicit
+
+For-each (b):
+```
+for (Pegawai pegawai : pegawaiList) {
+    // iterasi langsung, lebih clean
+}
+```
+Keuntungan: cleaner syntax, less error-prone
+
+Untuk displaying list, for-each lebih natural. Tapi keduanya valid.
+
+Jawaban A → keduanya cocok, pilih sesuai preferensi.
+
+Kesalahan umum:
+- Pilih B saja (tidak realize for loop juga valid)
+- Pilih C atau D (while/do-while less natural untuk iterasi)
+
+
+[C1.3] JAWABAN: B ✓
+
+REASONING:
+Metode yang NOT perlu override di subclass:
+
+- getNama(): Inherited dari parent Pegawai
+  → Tidak perlu di-override (sama untuk semua type)
+  → Tinggal gunakan dari parent
+
+- getGaji(): HARUS override
+  → Formula berbeda: Staff vs Manager
+  → Must override di setiap subclass
+
+- getBonus(): HARUS override
+  → Bonus formula berbeda
+  → Must override
+
+- getID(): HARUS override/set unique
+  → Setiap pegawai punya ID unik
+
+Jadi jawaban B, getNama() yang inherited dari parent.
+
+Kesalahan umum:
+- Pilih A (getGaji() HARUS di-override)
+
+
+[C2.1] JAWABAN: D ✓
+
+REASONING:
+Untuk sistem yang flexible dan extensible:
+
+- Inheritance (A): User → Student, Teacher, Admin
+  ✓ Good untuk hierarchical structure
+  
+- Interface (B): Actionable untuk berbagai tipe action
+  ✓ Good untuk polymorphic behavior
+  
+- Abstract class: BaseUser dengan abstract methods
+  ✓ Good untuk Template Method Pattern
+  
+Kombinasi semua (D):
+- User (abstract) dengan interface Actionable
+- Subclass Student, Teacher, Admin extends User implements relevant interface
+- Enable: add Moderator later tanpa change existing code
+- Maksimal flexibility & extensibility
+
+Jawaban D adalah best practice untuk scenario ini.
+
+
+[C2.2] JAWABAN: B ✓
+
+REASONING:
+ArrayList<Actionable> actions = user.getActions();
+for (Actionable action : actions) {
+    System.out.println(action.getLabel());
+}
+
+Keuntungan:
+- Polymorphic: bisa apa saja yang implement Actionable
+- Flexible: tambah action baru tidak butuh ubah kode ini
+- Clean: tidak perlu if-else atau switch-case
+
+Kesalahan umum:
+- Pilih A atau C: tight coupling dengan type checking
+
+
+[C2.3] JAWABAN: B ✓
+
+REASONING:
+Untuk add tipe user baru (Moderator) tanpa ubah existing code:
+
+TIDAK:
+- Ubah existing kode (A, C) → violate Open-Closed Principle
+- Ubah database (D) → backend change, main logic tetap
+
+BENAR:
+B. Buat class Moderator:
+```
+public class Moderator extends User {
+    // implement methods
+    // add specific actions untuk moderator
+}
+
+// In main/registration
+if (userType == "Moderator") {
+    user = new Moderator();
+}
+```
+
+Done! Sistem tetap work, existing code tidak berubah.
+Ini adalah Open-Closed Principle: open for extension, closed for modification.
+
+
+[C3.1] JAWABAN: B ✓
+
+REASONING:
+Customer punya multiple account types berbeda:
+- Tabungan, Deposito, Investasi
+
+Best approach B:
+```
+ArrayList<Account> accounts = new ArrayList<>();
+// dapat tambah Tabungan, Deposito, Investasi mixed
+accounts.add(new Tabungan(...));
+accounts.add(new Deposito(...));
+accounts.add(new Investasi(...));
+```
+
+Keuntungan:
+- Polymorphic: satu ArrayList handle semua type
+- Extensible: add account type baru easy
+- Clean: iterate once, tidak perlu 3 loops
+
+Kesalahan umum:
+- Pilih A: tidak scalable, hard-coded
+- Pilih C: tidak type-safe
+
+
+[C3.2] JAWABAN: B ✓
+
+REASONING:
+```
+double totalBalance = 0;
+for (Account account : accounts) {
+    totalBalance += account.getBalance();
+}
+```
+
+Single for-each loop cukup karena polymorphism:
+- Setiap account type punya getBalance() implementation sendiri
+- Loop tidak perlu tahu tipe actual account
+
+Kesalahan umum:
+- Pilih A: tidak realize polymorphism work di loop
+
+
+[C3.3] JAWABAN: A ✓
+
+REASONING:
+```
+double interest = account.getInterest();
+```
+
+Ini polymorphism:
+- Tabungan.getInterest() return 3%
+- Deposito.getInterest() return 5%
+- Investasi.getInterest() return variable%
+- Caller tidak perlu tahu tipe account
+
+Kesalahan umum:
+- Pilih B/C: think harus check tipe dengan if-else
+- Tidak realize polymorphic dispatch
+
+
+════════════════════════════════════════════════════════════════════════════
+BAGIAN 3: SOLUSI PROJECT PENERAPAN
+════════════════════════════════════════════════════════════════════════════
+
+PROJECT 1: SISTEM MANAJEMEN INVENTORI TOKO
+─────────────────────────────────────────────
+
+SOLUSI OUTLINE:
+
+1. STRUCTURE:
+
+abstract class Barang {
+    int id;
+    String nama;
+    double harga;
+    int stok;
+    
+    abstract double calculateSellingPrice();
+}
+
+class Elektronik extends Barang {
+    @Override
+    double calculateSellingPrice() {
+        return harga * (1 - 0.15);  // 15% discount
+    }
+}
+
+class Fashion extends Barang {
+    @Override
+    double calculateSellingPrice() {
+        return harga * (1 - 0.20);  // 20% discount
+    }
+}
+
+class Makanan extends Barang {
+    @Override
+    double calculateSellingPrice() {
+        return harga * (1 - 0.05);  // 5% discount
+    }
+}
+
+interface Reportable {
+    String getReport();
+}
+
+class Seller implements Reportable {
+    int id;
+    String nama;
+    ArrayList<Barang> inventory;
+    
+    void addBarang(Barang b) { ... }
+    void displayBarang() {
+        for (int i = 0; i < inventory.size(); i++) {
+            Barang b = inventory.get(i);
+            System.out.println((i+1) + ". " + b.nama + 
+                             " - Rp " + b.calculateSellingPrice());
+        }
+    }
+    void searchBarang(String nama) {
+        do {
+            for (Barang b : inventory) {
+                if (b.nama.equalsIgnoreCase(nama)) {
+                    System.out.println("Found: " + b.nama);
+                    break;
+                }
+            }
+            System.out.print("Search again? (Y/N): ");
+            // process choice
+        } while (...);
+    }
+}
+
+2. TESTING:
+- Test addBarang() dengan 3 kategori berbeda
+- Test displayBarang() polimorfik (hitung harga jual berbeda)
+- Test search dengan do-while retry
+- Test laporan nilai inventori (nested loop)
+
+
+PROJECT 2: EMPLOYEE MANAGEMENT SYSTEM
+──────────────────────────────────────
+
+SOLUSI OUTLINE:
+
+abstract class Employee {
+    int id;
+    String nama;
+    String department;
+    
+    abstract double calculateGaji();
+}
+
+class PegawaiTetap extends Employee {
+    double baseSalary = 10_000_000;
+    int bonus;
+    
+    @Override
+    double calculateGaji() {
+        return baseSalary + bonus;
+    }
+}
+
+class PegawaiKontrak extends Employee {
+    double hourlyRate;
+    int jamKerja;
+    
+    @Override
+    double calculateGaji() {
+        return hourlyRate * jamKerja;
+    }
+}
+
+interface IReportable {
+    String generateReport();
+}
+
+interface ITaxable {
+    double calculateTax();
+}
+
+class PayrollSystem implements IReportable, ITaxable {
+    ArrayList<Employee> employees;
+    
+    void displayAllEmployee() {
+        for (int i = 0; i < employees.size(); i++) {
+            Employee emp = employees.get(i);
+            System.out.println((i+1) + ". " + emp.nama + 
+                             " - Rp " + emp.calculateGaji());
+        }
+    }
+    
+    void generatePayroll() {
+        double totalPayroll = 0;
+        for (Employee emp : employees) {
+            double gaji = emp.calculateGaji();
+            double tax = calculateTax(emp);
+            double net = gaji - tax;
+            totalPayroll += gaji;
+        }
+    }
+}
+
+2. TESTING:
+- Register 10 karyawan mix type
+- Calculate payroll dengan polymorphic getGaji()
+- Search by department (for-each loop)
+- Update performance rating (nested loop per dept)
+
+
+PROJECT 3: PAYMENT SYSTEM
+─────────────────────────
+
+SOLUSI OUTLINE:
+
+interface PaymentMethod {
+    boolean processPayment(double amount);
+    String getTransactionID();
+    String getStatus();
+    String getReceipt();
+}
+
+class CreditCardPayment implements PaymentMethod {
+    double fee = 0.03;
+    
+    @Override
+    boolean processPayment(double amount) {
+        double totalCharge = amount * (1 + fee);
+        // process charge
+        return true;
+    }
+}
+
+class BankTransferPayment implements PaymentMethod {
+    double fee = 0.00;
+    @Override
+    boolean processPayment(double amount) {
+        // process transfer
+        return true;
+    }
+}
+
+class PaymentProcessor {
+    ArrayList<PaymentMethod> transactions;
+    
+    void selectPaymentMethod() {
+        // display methods
+        // user choose
+        // polymorphic call: selectedMethod.processPayment(amount)
+    }
+    
+    void displayHistory() {
+        for (PaymentMethod pm : transactions) {
+            System.out.println(pm.getReceipt());
+        }
+    }
+    
+    void generateStatistics() {
+        // nested loop: per payment method
+        // aggregate: count, total, average
+    }
+}
+
+════════════════════════════════════════════════════════════════════════════
+BAGIAN 4: SOLUSI PROBLEM SOLVING
+════════════════════════════════════════════════════════════════════════════
+
+[PS1] SOLUSI: Count & Sum Loop
+
+public static void analyzeNumbers(int[] numbers) {
+    int count = 0;
+    int sum = 0;
+    int max = numbers[0];
+    int min = numbers[0];
+    
+    for (int num : numbers) {
+        if (num > 5) count++;
+        sum += num;
+        if (num > max) max = num;
+        if (num < min) min = num;
+    }
+    
+    double average = (double) sum / numbers.length;
+    
+    System.out.println("Angka > 5: " + count + ", Sum: " + sum + 
+                     ", Max: " + max + ", Min: " + min + 
+                     ", Average: " + String.format("%.2f", average));
+}
+
+Output:
+Angka > 5: 4, Sum: 35, Max: 9, Min: 1, Average: 5.00
+
+
+[PS2] SOLUSI: Nested Loop Pattern
+
+public static void printStarPattern(int rows) {
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+}
+
+
+[PS3] SOLUSI: Loop Control
+
+ArrayList<String> names = new ArrayList<>(
+    Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve"));
+
+int foundCount = 0;
+
+for (String name : names) {
+    if (name.length() > 4) {
+        System.out.println("\"" + name + "\" (" + name.length() + " karakter) - sesuai");
+        foundCount++;
+        if (foundCount == 2) break;  // Stop setelah 2 items
+    } else {
+        continue;  // Skip ke iterasi berikutnya
+    }
+}
+
+
+[PS4] SOLUSI: Polymorphic Loop
+
+interface Shape {
+    double calculateArea();
+}
+
+class Circle implements Shape {
+    double radius;
+    Circle(double r) { this.radius = r; }
+    
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle implements Shape {
+    double length, width;
+    Rectangle(double l, double w) { this.length = l; this.width = w; }
+    
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+// Main logic
+ArrayList<Shape> shapes = new ArrayList<>();
+shapes.add(new Circle(5));
+shapes.add(new Rectangle(4, 6));
+// ... add more
+
+// a) Display areas
+double totalArea = 0;
+Shape maxShape = null;
+double maxArea = 0;
+
+for (Shape shape : shapes) {
+    double area = shape.calculateArea();
+    System.out.println("Area: " + area);
+    totalArea += area;
+    
+    if (area > maxArea) {
+        maxArea = area;
+        maxShape = shape;
+    }
+}
+
+System.out.println("Total Area: " + totalArea);
+System.out.println("Max Area: " + maxArea);
+
+
+[PS5] SOLUSI: Do-While Validation
+
+double saldo = 1_000_000;
+double withdrawal;
+boolean validInput;
+
+do {
+    validInput = true;
+    System.out.print("Masukkan nominal (kelipatan 50rb): Rp ");
+    withdrawal = scanner.nextDouble();
+    
+    if (withdrawal <= 0) {
+        System.out.println("Invalid - harus > 0");
+        validInput = false;
+    } else if (withdrawal > saldo) {
+        System.out.println("Invalid - saldo tidak cukup");
+        validInput = false;
+    } else if (withdrawal % 50_000 != 0) {
+        System.out.println("Invalid - harus kelipatan 50rb");
+        validInput = false;
+    }
+} while (!validInput);
+
+saldo -= withdrawal;
+System.out.println("Withdrawal success. Remaining: Rp " + saldo);
+
+
+[PS6] SOLUSI: Search dengan Loop
+
+public static Product searchByName(ArrayList<Product> products, String name) {
+    for (Product p : products) {
+        if (p.getName().equalsIgnoreCase(name)) {
+            return p;
+        }
+    }
+    return null;
+}
+
+public static ArrayList<Product> searchByPriceRange(
+        ArrayList<Product> products, double min, double max) {
+    ArrayList<Product> result = new ArrayList<>();
+    for (Product p : products) {
+        if (p.getPrice() >= min && p.getPrice() <= max) {
+            result.add(p);
+        }
+    }
+    return result;
+}
+
+public static double getAveragePrice(ArrayList<Product> products, String category) {
+    double sum = 0;
+    int count = 0;
+    for (Product p : products) {
+        if (p.getCategory().equalsIgnoreCase(category)) {
+            sum += p.getPrice();
+            count++;
+        }
+    }
+    return count > 0 ? sum / count : 0;
+}
+
+
+[PS7] SOLUSI: Nested Loop Multiplication Table
+
+public static void printMultiplicationTable(int maxNumber) {
+    for (int i = 1; i <= maxNumber; i++) {
+        for (int j = 1; j <= maxNumber; j++) {
+            System.out.print(String.format("%2dx%-2d=%-4d  ", i, j, i*j));
+        }
+        System.out.println();
+    }
+}
+
+
+[PS8] SOLUSI: Polymorphic Employee
+
+abstract class EmployeeBonus {
+    String name;
+    double baseSalary;
+    abstract double calculateBonus();
+}
+
+class Manager extends EmployeeBonus {
+    @Override
+    double calculateBonus() {
+        return baseSalary * 0.20;
+    }
+}
+
+class Developer extends EmployeeBonus {
+    @Override
+    double calculateBonus() {
+        return baseSalary * 0.15;
+    }
+}
+
+class Designer extends EmployeeBonus {
+    @Override
+    double calculateBonus() {
+        return baseSalary * 0.12;
+    }
+}
+
+// Main
+ArrayList<EmployeeBonus> employees = new ArrayList<>();
+// ... add mixed employees
+
+double maxBonus = 0;
+EmployeeBonus maxBonusEmp = null;
+double totalBonus = 0;
+
+for (EmployeeBonus emp : employees) {
+    double bonus = emp.calculateBonus();
+    System.out.println(emp.name + " - Rp" + emp.baseSalary + 
+                     " - Bonus: Rp" + bonus);
+    totalBonus += bonus;
+    
+    if (bonus > maxBonus) {
+        maxBonus = bonus;
+        maxBonusEmp = emp;
+    }
+}
+
+System.out.println("Total Bonus: Rp" + totalBonus);
+System.out.println("Max Bonus: " + maxBonusEmp.name + " - Rp" + maxBonus);
+
+════════════════════════════════════════════════════════════════════════════
+END OF ANSWER KEY
+════════════════════════════════════════════════════════════════════════════
