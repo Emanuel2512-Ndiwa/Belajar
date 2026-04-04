@@ -1,24 +1,22 @@
 package CLI;
 
-
 import java.util.Scanner;
-
 import ECommerce.DataManager;
 import ECommerce.User;
 
 public class Login {
 
-    public Login(Scanner scanner,DataManager datsDataManager,NavigationHandler navigationHandler) {
-        System.out.println("Enter Your email");
-        String email = scanner.nextLine();
-        System.out.println("Enter Your Pasword:");
-        String password = scanner.nextLine();
+    public Login(Scanner scanner, DataManager datsDataManager, NavigationHandler navigationHandler) {
+        System.out.println("Enter Your email\t:");
+        String email = scanner.next();
+        System.out.println("Enter Your Pasword\t:");
+        String password = scanner.next();
 
         boolean loggedIn = false;
         for (User user : datsDataManager.getUsers()) {
             if (user.getEmail().equals(email) && user.equals(password)) {
                 loggedIn = true;
-                NavigationHandler.showMenu(user);
+                navigationHandler.showMenu(user);
                 break;
 
             }
