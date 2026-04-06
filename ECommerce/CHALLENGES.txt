@@ -58,6 +58,46 @@ Jawaban: ___________
 
     int sum = 0;
     for (int i = 1; i <= 10; i++) {
+    i =i
+    sum = 0
+    sum = I
+
+    i=2
+    sum = I
+    sum =3
+    i=3
+    sum = 3
+    sum =6
+
+    i=3
+    sum =6
+    sum =9
+
+    i=4
+    sum =9
+    sum =|3
+
+    i=5
+    sum =|3
+    sum =|8
+
+    i=6
+    sum |8
+    sum =24
+
+    i=7
+    sum=24
+    sum =3|
+
+    i=8
+    sum=3|
+    sum =39
+
+    i=9
+    sum=39
+    sum=
+
+
         sum += i;
     }
     System.out.println(sum);
@@ -97,6 +137,7 @@ Jawaban: ___________
 [1.6] Berapa banyak kali loop ini akan dijalankan?
 
     for (int i = 5; i >= 1; i--) {
+        .....
         System.out.println(i);
     }
 
