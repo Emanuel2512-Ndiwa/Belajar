@@ -69,7 +69,7 @@ public class AddCategory implements Actionable {
         // CRUD CREATE - STEP 2: Membuat object Category baru
         // Relasi: Category memiliki ArrayList<Product> (akan diisi kemudian)
         Category c = new Category();
-        
+
         // CRUD CREATE - STEP 3: Set atribut Category
         c.setID(ID);                      // Menyimpan ID unik
         c.setName(name);                  // Menyimpan nama kategori

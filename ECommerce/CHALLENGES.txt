@@ -1,0 +1,965 @@
+================================================================================
+            FUNDAMENTAL PROGRAMMING & OOP CHALLENGE COLLECTION
+            Standar SOP Industri untuk Fresh Graduate & WFH Training
+================================================================================
+Tanggal: April 2026
+Tingkat Kesulitan: Beginner → Intermediate
+Durasi Total: 15-20 jam
+Target: Menguasai Looping, OOP Polymorphism, Interface, Abstraction, Design Pattern
+
+================================================================================
+BAGIAN 1: SOAL PILIHAN GANDA (SINGLE CHOICE & MULTIPLE CHOICE)
+================================================================================
+
+TOPIK: LOOPING FUNDAMENTALS
+────────────────────────────────────────────────────────────────────────────
+
+[1.1] Perhatikan kode berikut:
+
+    for (int i = 0; i < 5; i++) {
+        System.out.println(i);
+    }
+
+Output yang dihasilkan adalah:
+A. 0 1 2 3 4
+B. 1 2 3 4 5
+C. 0 1 2 3 4 (setiap dalam baris baru)
+D. 1 2 3 4 5 (setiap dalam baris baru)
+
+Jawaban: ___________
+
+
+[1.2] Apa perbedaan utama antara FOR Loop dan DO-WHILE loop?
+A. FOR loop lebih cepat dari DO-WHILE
+B. DO-WHILE minimal execute 1x sebelum check kondisi, FOR check kondisi dulu
+C. FOR loop hanya untuk iterasi array, DO-WHILE untuk kondisi umum
+D. Tidak ada perbedaan, hanya syntax berbeda
+
+Jawaban: ___________
+
+
+[1.3] Berikut ini adalah kode dengan FOR-EACH loop:
+
+    int[] numbers = {10, 20, 30, 40, 50};
+    for (int num : numbers) {
+        System.out.println(num);
+    }
+
+Manakah pernyataan yang BENAR tentang kode di atas?
+A. Variabel 'num' adalah index dari array
+B. Kode ini akan error karena syntax salah
+C. Variabel 'num' menyimpan nilai elemen array pada setiap iterasi
+D. Loop akan berjalan 6 kali (termasuk 0)
+
+Jawaban: ___________
+
+
+[1.4] Perhatikan kode:
+
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+    i =i
+    sum = 0
+    sum = I
+
+    i=2
+    sum = I
+    sum =3
+    i=3
+    sum = 3
+    sum =6
+
+    i=3
+    sum =6
+    sum =9
+
+    i=4
+    sum =9
+    sum =|3
+
+    i=5
+    sum =|3
+    sum =|8
+
+    i=6
+    sum |8
+    sum =24
+
+    i=7
+    sum=24
+    sum =3|
+
+    i=8
+    sum=3|
+    sum =39
+
+    i=9
+    sum=39
+    sum=
+
+
+        sum += i;
+    }
+    System.out.println(sum);
+
+Output yang ditampilkan adalah:
+A. 10
+B. 45
+C. 55
+D. 15
+
+Jawaban: ___________
+
+
+[1.5] Kode mana yang menggunakan NESTED LOOP (loop dalam loop)?
+
+A.  for (int i = 0; i < 3; i++) {
+        System.out.println(i);
+    }
+
+B.  for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            System.out.println(i + " " + j);
+        }
+    }
+
+C.  int i = 0;
+    while (i < 3) {
+        System.out.println(i);
+        i++;
+    }
+
+D.  for (int i = 0; i < 3; i++);
+
+Jawaban: ___________
+
+
+[1.6] Berapa banyak kali loop ini akan dijalankan?
+
+    for (int i = 5; i >= 1; i--) {
+        .....
+        System.out.println(i);
+    }
+
+A. 4 kali
+B. 5 kali
+C. 6 kali
+D. Tidak akan dijalankan
+
+Jawaban: ___________
+
+
+[1.7] Perhatikan kode DO-WHILE:
+
+    int count = 0;
+    do {
+        System.out.println(count);
+        count++;
+    } while (count < 0);
+
+Berapa kali loop dijalankan?
+A. 0 kali
+B. 1 kali
+C. Infinite loop
+D. Tergantung nilai awal count
+
+Jawaban: ___________
+
+
+[1.8] Pilihan jawaban BENAR tentang FOR-EACH loop:
+(Jawaban bisa lebih dari satu)
+
+1. FOR-EACH tidak bisa digunakan untuk mengubah nilai elemen array
+2. FOR-EACH lebih mudah dibaca dibanding FOR loop biasa
+3. FOR-EACH tidak bisa mengakses index elemen
+4. FOR-EACH hanya bekerja dengan array dan Collection
+
+A. 1, 2, 3
+B. 2, 3, 4
+C. 1, 2, 4
+D. Semua benar
+
+Jawaban: ___________
+
+
+TOPIK: OOP - INHERITANCE
+────────────────────────────────────────────────────────────────────────────
+
+[2.1] Apa yang dimaksud dengan INHERITANCE dalam OOP?
+A. Membuat satu kelas dari kelas lain (child mewarisi parent)
+B. Membuat metode baru di kelas yang sama
+C. Membuat banyak object dari satu kelas
+D. Menyembunyikan data dalam sebuah kelas
+
+Jawaban: ___________
+
+
+[2.2] Perhatikan kode:
+
+    public class Kendaraan {
+        String warna = "merah";
+    }
+    
+    public class Mobil extends Kendaraan {
+        // Mobil mewarisi warna dari Kendaraan
+    }
+
+Manakah pernyataan yang SALAH?
+A. Mobil adalah child class dari Kendaraan
+B. Mobil mewarisi atribut 'warna' dari Kendaraan
+C. Kendaraan mewarisi atribut dari Mobil
+D. Object Mobil bisa mengakses atribut 'warna'
+
+Jawaban: ___________
+
+
+[2.3] Keyword apa yang digunakan untuk menunjukkan inheritance dalam Java?
+A. implements
+B. extends
+C. inherits
+D. super
+
+Jawaban: ___________
+
+
+[2.4] Manakah yang bukan keuntungan dari inheritance?
+A. Mengurangi duplikasi kode (code reusability)
+B. Membuat hierarchical relationship antar kelas
+C. Menurunkan performa program karena lebih banyak kelas
+D. Memudahkan maintenance dan modification
+
+Jawaban: ___________
+
+
+TOPIK: OOP - POLYMORPHISM
+────────────────────────────────────────────────────────────────────────────
+
+[3.1] Apa yang dimaksud dengan POLYMORPHISM?
+A. Kemampuan method untuk memiliki nama yang sama tapi behavior berbeda
+B. Kemampuan object untuk memiliki banyak bentuk/tipe
+C. Kemampuan untuk membuat banyak kelas dengan nama sama
+D. Kemampuan untuk mewarisi dari banyak kelas sekaligus
+
+Jawaban: ___________
+
+
+[3.2] Ada 2 jenis polymorphism, yaitu:
+A. Compile-time dan Runtime polymorphism
+B. Static dan Dynamic polymorphism
+C. Method overloading dan Method overriding
+D. Semua opsi di atas benar
+
+Jawaban: ___________
+
+
+[3.3] Perhatikan kode:
+
+    public class Animal {
+        public void sound() {
+            System.out.println("Animal sound");
+        }
+    }
+    
+    public class Dog extends Animal {
+        @Override
+        public void sound() {
+            System.out.println("Woof!");
+        }
+    }
+    
+    Animal myAnimal = new Dog();
+    myAnimal.sound();
+
+Output yang ditampilkan adalah:
+A. Animal sound
+B. Woof!
+C. Error - tidak bisa polymorphism seperti ini
+D. Tidak ada output
+
+Jawaban: ___________
+
+
+[3.4] Manakah yang merupakan contoh METHOD OVERRIDING?
+A. Dua method dengan nama sama tapi parameter berbeda dalam satu kelas
+B. Method di child class dengan nama dan signature sama seperti parent class
+C. Method yang dipanggil berkali-kali
+D. Method yang memanggil method lain
+
+Jawaban: ___________
+
+
+[3.5] Manakah yang merupakan contoh METHOD OVERLOADING?
+A. Dua method dengan nama yang sama tapi parameter berbeda
+B. Method di child class yang override parent method
+C. Method yang dipanggil berkali-kali dalam loop
+D. Method yang memiliki return type berbeda
+
+Jawaban: ___________
+
+
+TOPIK: OOP - INTERFACE
+────────────────────────────────────────────────────────────────────────────
+
+[4.1] Apa itu INTERFACE dalam Java?
+A. Sebuah aplikasi yang menampilkan tombol dan menu
+B. Kontrak yang mendefinisikan metode-metode yang harus diimplementasi
+C. Cara berkomunikasi antara dua object
+D. Jenis kelas yang tidak bisa diinstansiasi
+
+Jawaban: ___________
+
+
+[4.2] Keyword apa yang digunakan untuk mengimplementasikan interface?
+A. extends
+B. implements
+C. inherits
+D. interface
+
+Jawaban: ___________
+
+
+[4.3] Berapa banyak interface yang bisa diimplementasikan oleh satu kelas?
+A. Hanya 1 interface
+B. Maksimal 2 interface
+C. Bisa unlimited/banyak interface
+D. Tergantung kompleksitas
+
+Jawaban: ___________
+
+
+[4.4] Perhatikan kode:
+
+    public interface Movable {
+        void move();
+    }
+    
+    public class Car implements Movable {
+        @Override
+        public void move() {
+            System.out.println("Car is moving");
+        }
+    }
+
+Pernyataan mana yang BENAR?
+A. Car adalah subclass dari Movable
+B. Car mengimplementasikan interface Movable
+C. Movable adalah object konkret
+D. Car tidak perlu mengimplementasikan method move()
+
+Jawaban: ___________
+
+
+[4.5] Apa perbedaan utama antara ABSTRACT CLASS dan INTERFACE?
+A. Tidak ada perbedaan, keduanya sama
+B. Abstract class bisa punya konstruktor, interface tidak
+C. Interface bisa punya state (variabel), abstract class tidak
+D. Abstract class bisa warisan single, interface bisa multiple implementation
+
+Jawaban: ___________
+
+
+TOPIK: OOP - ENCAPSULATION
+────────────────────────────────────────────────────────────────────────────
+
+[5.1] Apa tujuan ENCAPSULATION?
+A. Membuat kode lebih pendek dan efisien
+B. Menyembunyikan detail implementasi dan melindungi data
+C. Membuat program berjalan lebih cepat
+D. Menggabungkan semua method dalam satu file
+
+Jawaban: ___________
+
+
+[5.2] Access modifier apa yang paling ketat untuk membatasi akses data?
+A. public
+B. private
+C. protected
+D. default
+
+Jawaban: ___________
+
+
+[5.3] Perhatikan kode:
+
+    public class Person {
+        private int age;
+        
+        public int getAge() {
+            return age;
+        }
+        
+        public void setAge(int age) {
+            if (age > 0) {
+                this.age = age;
+            }
+        }
+    }
+
+Manakah yang BENAR tentang kode di atas?
+A. setAge() memungkinkan validasi sebelum mengubah age
+B. Data age tidak bisa diakses langsung dari luar kelas
+C. Ini adalah contoh Encapsulation
+D. Semua opsi di atas benar
+
+Jawaban: ___________
+
+
+================================================================================
+BAGIAN 2: SOAL CERITA (SCENARIO-BASED QUESTIONS)
+================================================================================
+
+CERITA 1: Sistem Manajemen Pegawai
+
+Anda diminta membuat sistem manajemen pegawai untuk perusahaan dengan struktur:
+- Ada 2 tipe pegawai: Staff dan Manager
+- Staff gaji = Rp 5.000.000 + bonus tergantung kinerja
+- Manager gaji = Rp 10.000.000 + bonus tergantung team performance
+- Perusahaan ingin menampilkan daftar semua pegawai dan total gaji setiap bulan
+
+[C1.1] Konsep OOP apa yang paling cocok untuk struktur ini?
+A. Inheritance - Staff dan Manager sebagai child class dari Pegawai
+B. Interface - mendefinisikan metode getGaji()
+C. Polymorphism - staff.getGaji() dan manager.getGaji() bisesuaikan dengan tipe
+D. Semua opsi di atas cocok digunakan bersama
+
+Jawaban: ___________
+
+
+[C1.2] Implementasi apa yang tepat untuk menampilkan semua pegawai dan gajinya?
+
+Pilihan implementasi:
+a) for loop dengan index untuk iterasi ArrayList<Pegawai>
+b) for-each loop untuk iterasi ArrayList<Pegawai>
+c) while loop dengan counter
+d) do-while loop sampai user exit
+
+A. Hanya a dan b yang cocok, keduanya valid tergantung kebutuhan
+B. Hanya b, karena lebih clean dan modern
+C. Hanya a, karena bisa tracking index
+D. Semua opsi cocok, tergantung preferensi programmer
+
+Jawaban: ___________
+
+
+[C1.3] Metode mana yang tidak perlu diimplementasikan di kedua subclass (Staff dan Manager)?
+A. getGaji() - karena formula berbeda untuk masing-masing
+B. getNama() - karena inherited dari parent class Pegawai
+C. getBonus() - karena bonus berbeda tipe pegawai
+D. getID() - karena setiap pegawai punya ID unik
+
+Jawaban: ___________
+
+
+CERITA 2: E-Learning Platform
+
+Platform e-learning memiliki fitur untuk berbagai tipe user:
+- Student: bisa view course, submit assignment, lihat nilai
+- Teacher: bisa create course, grade assignment, lihat student progress
+- Admin: bisa manage user, manage course, lihat report
+
+System harus memudahkan menambah fitur baru (seperti Moderator) tanpa mengubah kode existing.
+
+[C2.1] Strategy OOP terbaik untuk fleksibilitas ini?
+A. Inheritance hierarchy: User → Student, Teacher, Admin
+B. Interface: Actionable, View, Create, dengan multiple implementation
+C. Abstract class BaseUser dan subclass menerapkan interface spesifik
+D. Opsi A + B + C kombinasi semuanya
+
+Jawaban: ___________
+
+
+[C2.2] Untuk menampilkan aksi yang bisa dilakukan setiap tipe user, anda:
+A. Buat if-else untuk setiap tipe user
+B. Simpan dalam ArrayList<Actionable> dan iterasi dengan for-each
+C. Gunakan switch-case untuk setiap user type
+D. Buat method terpisah untuk setiap tipe user
+
+Jawaban: ___________
+
+
+[C2.3] Jika ingin menambah tipe user baru (Moderator), langkah yang diperlukan:
+A. Ubah kode existing, tambah case baru di switch
+B. Buat class Moderator extends User, implement interface diperlukan, done
+C. Ubah method yang menampilkan semua aksi user
+D. Buat database baru untuk user type baru
+
+Jawaban: ___________
+
+
+CERITA 3: Banking System
+
+Sistem perbankan dengan:
+- Tabungan: bunga 3% per tahun, bisa withdraw kapan saja
+- Deposito: bunga 5% per tahun, locked untuk periode tertentu
+- Investasi: bunga variable, punya resiko
+
+Sistem harus bisa:
+- Menampilkan daftar semua akun untuk satu customer
+- Menghitung total saldo semua akun
+- Menampilkan estimasi bunga setiap akun
+
+[C3.1] Bagaimana menyimpan berbagai tipe akun untuk satu customer?
+A. Buat variable terpisah: Tabungan tabungan, Deposito deposito, Investasi investasi
+B. ArrayList<Account> dimana Account adalah base class/interface
+C. ArrayList<Object> yang bisa menampung semua tipe
+D. Database dengan beberapa tabel terpisah
+
+Jawaban: ___________
+
+
+[C3.2] Untuk menghitung total saldo dari berbagai tipe akun:
+A. Gunakan for loop 3x (satu untuk setiap tipe akun)
+B. Gunakan for-each loop satu kali ke ArrayList<Account>
+C. Gunakan manual calculation tanpa loop
+D. Tanyakan ke user total berapa
+
+Jawaban: ___________
+
+
+[C3.3] Jika ditanya "berapa bunga account ini?", jawaban bergantung tipe akun:
+A. Ini adalah contoh polymorphism - account.getInterest() berbeda sesuai tipe
+B. Harus gunakan if-else atau switch-case untuk cek tipe
+C. Tidak bisa dilakukan, harus cek tipe dulu
+D. Deprecated, tidak direkomendasikan
+
+Jawaban: ___________
+
+
+================================================================================
+BAGIAN 3: PROJECT PENERAPAN (IMPLEMENTATION PROJECT)
+================================================================================
+
+PROJECT 1: SISTEM MANAJEMEN INVENTORI TOKO
+
+Level: Beginner → Intermediate
+Durasi: 3-5 jam
+Konsep yang dilatih: Inheritance, Polymorphism, Interface, Looping, Encapsulation
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ DESKRIPSI PROYEK:                                                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Buat sistem inventori untuk toko online dengan fitur:
+
+1. ENTITY STRUCTURE:
+   - Barang (Base class/abstract)
+     ├─ Elektronik (diskon 15%, pajak 10%)
+     ├─ Fashion (diskon 20%, pajak 8%)
+     └─ Makanan (diskon 5%, pajak 5%)
+   
+   - Seller memiliki nama, ID, rating, inventori barang
+
+2. FITUR YANG HARUS DIIMPLEMENTASIKAN:
+
+   a) ADD BARANG (Input barang baru ke inventori)
+      - Input: nama, harga, kategori, stok
+      - Validasi: harga > 0, stok >= 0
+      - Output: "Barang berhasil ditambahkan"
+   
+   b) DISPLAY BARANG (Tampilkan semua barang)
+      - Gunakan looping untuk iterasi barang
+      - Format: No | Nama | Harga | Stok | Harga Jual (after discount)
+      - Hitung harga jual dengan diskon sesuai kategori (polymorphism)
+   
+   c) SEARCH BARANG (Cari barang berdasarkan nama)
+      - Gunakan looping untuk iterasi
+      - Case-insensitive search
+      - Tampilkan detail barang jika ditemukan
+      - Tanya user apakah ingin search lagi (do-while)
+   
+   d) UPDATE STOK (Tambah atau kurangi stok)
+      - Input: nama barang, jumlah perubahan
+      - Validasi: stok tidak boleh negatif
+      - Output: stok sebelum dan sesudah
+   
+   e) LAPORAN NILAI INVENTORI
+      - Tampilkan total nilai inventori (sum dari semua barang)
+      - Breakdown per kategori
+      - Gunakan nested loop untuk kategori & barang
+   
+   f) DATA PERSISTENCE (Bonus)
+      - Simpan ke file CSV atau text ketika exit
+      - Load dari file ketika program start
+
+3. REQUIREMENT TEKNIS:
+
+   Struktur Class:
+   - abstract class Barang dengan metode abstract calculateSellingPrice()
+   - concrete class untuk setiap kategori (Elektronik, Fashion, Makanan)
+   - interface Reportable dengan method getReport()
+   - class InventoryManager untuk manage operasi
+   - class Seller untuk menyimpan seller info
+
+   Looping Requirements:
+   - Minimal 1x for loop dengan index
+   - Minimal 1x for-each loop
+   - Minimal 1x do-while loop untuk user menu
+   - Minimal 1x nested loop untuk kategori & barang
+
+   OOP Requirements:
+   - Inheritance: kategori product dari base class
+   - Polymorphism: calculateSellingPrice() override di setiap kategori
+   - Interface: Reportable untuk laporan
+   - Encapsulation: private attributes dengan getter/setter
+   - Abstraction: abstract class Barang
+
+4. TESTING CASES:
+
+   Test Case 1: Tambah 3 barang berbeda kategori
+   Expected: Semua barang tertambah dengan harga jual berbeda
+
+   Test Case 2: Cari barang yang tidak ada
+   Expected: "Barang tidak ditemukan", tanya user search lagi
+
+   Test Case 3: Update stok negatif
+   Expected: "Error - stok tidak boleh negatif"
+
+   Test Case 4: Laporan nilai inventori
+   Expected: Total value + breakdown per kategori
+
+
+PROJECT 2: EMPLOYEE MANAGEMENT SYSTEM
+
+Level: Intermediate
+Durasi: 4-6 jam
+Konsep yang dilatih: Inheritance, Polymorphism, Interface, Abstract Class, Looping
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ DESKRIPSI PROYEK:                                                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Buat sistem manajemen karyawan perusahaan dengan fitur:
+
+1. EMPLOYEE TYPES:
+   - Karyawan Tetap (Gaji = base + tunjangan = Rp 10.000.000 + bonus)
+   - Karyawan Kontrak (Gaji = hourly rate × jam kerja, no tunjangan)
+   - Karyawan Lepas (Income = project × rate per project)
+
+2. FITUR YANG DIIMPLEMENTASIKAN:
+
+   a) REGISTER KARYAWAN
+      - Input: seluruh data karyawan sesuai tipe
+      - Assign unique ID (auto-increment)
+      - Simpan ke ArrayList
+   
+   b) DISPLAY SEMUA KARYAWAN
+      - Tampilkan dalam tabel format
+      - Include gaji, status, department
+      - Hitung gaji dengan polymorphism sesuai tipe
+   
+   c) HITUNG PAYROLL
+      - Display gaji tiap karyawan
+      - Calculate total payroll per department
+      - Calculate tax, net income
+      - Gunakan for-each loop untuk iterasi
+   
+   d) CARI KARYAWAN
+      - By ID, by name, by department
+      - Do-while loop untuk repeat search
+   
+   e) GENERATE REPORT
+      - Total pegawai per tipe
+      - Total payroll per department
+      - Highest salary, lowest salary
+      - Gunakan nested loop dan aggregation
+   
+   f) PERFORMANCE RATING
+      - Input: rating 1-5
+      - Bonus calculation: rating × base salary × 5%
+      - Update gaji karyawan
+   
+   g) DEPARTMENT ANALYSIS
+      - Tampilkan employee count per department
+      - Average salary per department
+      - Gunakan nested loop
+
+3. REQUIREMENT TEKNIS:
+
+   Struktur Class:
+   - abstract class Employee dengan abstract calculateGaji()
+   - class PegawaiTetap, PegawaiKontrak, PegawaiLepas extends Employee
+   - interface IReportable untuk generate report
+   - interface ITaxable untuk calculate pajak
+   - class PayrollSystem untuk manage operasi
+
+   Looping Requirements:
+   - For loop dengan index untuk menu numbering
+   - For-each loop untuk iterasi semua karyawan
+   - Do-while loop untuk main menu
+   - Nested loop untuk perhitungan aggregate (total per department)
+
+4. TESTING CASES:
+
+   Test Case 1: Register 10 karyawan (mix type)
+   Expected: Semua teregistrasi dengan ID unik
+
+   Test Case 2: Hitung payroll Agustus
+   Expected: Detail gaji + tax + net untuk semua karyawan
+
+   Test Case 3: Cari karyawan by department
+   Expected: List karyawan di department tersebut
+
+   Test Case 4: Performance rating update
+   Expected: Gaji berubah sesuai rating
+
+
+PROJECT 3: ABSTRAKSI ADVANCED - PAYMENT SYSTEM
+
+Level: Intermediate → Advanced
+Durasi: 5-7 jam
+Konsep: Interface, Polymorphism, Abstraction, Strategy Pattern, Looping
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ DESKRIPSI PROYEK:                                                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Buat sistem pembayaran dengan berbagai metode:
+- Credit Card (charge 3% fee)
+- Bank Transfer (charge 0% fee)
+- E-Wallet (charge 2% fee)
+- Cash (charge 0% fee)
+
+1. INTERFACE & IMPLEMENTATION:
+
+   interface PaymentMethod:
+   - processPayment(double amount)
+   - getTransactionID()
+   - getStatus()
+   - getReceipt()
+
+   Setiap metode pembayaran mengimplementasikan interface ini
+
+2. FITUR:
+
+   a) PROCESS TRANSACTION
+      - Select payment method
+      - Hitung fee sesuai metode (polymorphism)
+      - Process payment
+      - Generate receipt
+   
+   b) TRANSACTION HISTORY
+      - Tampilkan semua transaksi
+      - Hitung total amount, total fee
+      - Gunakan for-each loop
+   
+   c) PAYMENT STATISTICS
+      - Total per metode pembayaran
+      - Most used payment method
+      - Average transaction value
+      - Gunakan nested loop & aggregation
+   
+   d) REFUND HANDLING
+      - Cari transaksi by ID
+      - Process refund
+      - Update status
+      - Do-while loop untuk multiple refund
+   
+   e) VALIDATION & ERROR HANDLING
+      - Validasi amount > 0
+      - Validasi payment method available
+      - Catch exception & inform user
+
+3. REQUIREMENT:
+
+   Minimal looping:
+   - 2x for-each loop (transaction history, statistics)
+   - 1x for loop dengan condition
+   - 1x nested loop untuk statistics per metode
+   - 1x do-while untuk user retry
+
+   OOP Concept:
+   - Interface dengan multiple implementation (polymorphism)
+   - Abstract class PaymentProcessor
+   - Encapsulation: private transaction history
+   - Strategy pattern: payment method selection
+
+================================================================================
+BAGIAN 4: SOAL PROBLEM SOLVING (LOGIC & ALGORITHM)
+================================================================================
+
+LEVEL: BEGINNER → INTERMEDIATE
+
+[PS1] PROBLEM: Count & Sum Loop
+
+→ SOAL:
+Diberikan array: int[] numbers = {5, 3, 8, 1, 9, 2, 7};
+
+Tulis kode untuk:
+a) Hitung berapa banyak angka yang > 5
+b) Hitung jumlah (sum) dari semua angka
+c) Cari angka terbesar dan terkecil
+d) Hitung rata-rata
+
+Gunakan hanya 1 for loop (jangan multiple loop).
+
+Constraint:
+- Hanya boleh pakai 1 loop
+- Output format: 
+  "Angka > 5: [count], Sum: [sum], Max: [max], Min: [min], Average: [avg]"
+
+
+[PS2] PROBLEM: Nested Loop Pattern
+
+→ SOAL:
+Buat pattern dengan nested loop. Output harus seperti ini:
+
+    *
+    **
+    ***
+    ****
+    *****
+
+Constraint:
+- Hanya boleh pakai for loop (nested)
+- User input jumlah baris
+- Validasi input > 0 dan <= 10
+
+
+[PS3] PROBLEM: Loop Control (Break & Continue)
+
+→ SOAL:
+Diberikan ArrayList<String> names = {"Alice", "Bob", "Charlie", "David", "Eve"};
+
+Dengan menggunakan break dan continue, buat program yang:
+- Tampilkan nama yang panjangnya > 4 karakter
+- Berhenti jika sudah menemukan 2 nama yang sesuai criteria
+
+Output expected:
+    "Charlie" (6 karakter) - sesuai
+    "David" (5 karakter) - sesuai
+    (stop di sini)
+
+
+[PS4] PROBLEM: Polymorphic Loop
+
+→ SOAL:
+Buat 3 class Shape: Circle, Rectangle, Triangle
+Masing-masing punya method calculateArea() dengan formula berbeda:
+- Circle: π × r²
+- Rectangle: panjang × lebar  
+- Triangle: 0.5 × alas × tinggi
+
+Buat ArrayList<Shape> dengan 5 shapes berbeda, kemudian:
+a) Loop semua shapes dan tampilkan area (polymorphism)
+b) Cari shape dengan area terbesar
+c) Hitung total area semua shapes
+
+Constraint:
+- Gunakan interface atau abstract class
+- Gunakan polymorphic looping (ArrayList<Shape>)
+- Jangan pakai if-else untuk determine tipe shape
+
+
+[PS5] PROBLEM: Do-While Validation Loop
+
+→ SOAL:
+Buat program ATM withdrawal sederhana:
+
+Input user:
+- Saldo awal: Rp 1.000.000
+- Nominal penarikan (do-while sampai valid):
+  * Validasi: amount > 0
+  * Validasi: amount <= saldo
+  * Validasi: amount adalah kelipatan 50.000
+
+Jika invalid → "Invalid amount, please try again"
+Jika valid → "Withdrawal successful. Remaining balance: Rp [saldo]"
+
+Requirements:
+- Hanya gunakan 1 do-while loop untuk retry
+- Tidak perlu multiple loops
+
+
+[PS6] PROBLEM: Search with Loop
+
+→ SOAL:
+Diberikan ArrayList<Product>:
+- Product: id, name, price, category
+
+Implement method:
+1. searchByName(String name) → return Product atau null
+2. searchByPriceRange(double min, double max) → return ArrayList<Product>
+3. getAveragePrice(String category) → return double
+
+Requirement:
+- Gunakan for-each loop
+- Case-insensitive search untuk name
+- Efficient algorithm (jangan redundant looping)
+
+
+[PS7] PROBLEM: Nested Loop dengan Condition
+
+→ SOAL:
+Buat multiplication table (tabel perkalian):
+Input: max_number = 5
+
+Output:
+    1x1=1   1x2=2   1x3=3   1x4=4   1x5=5
+    2x1=2   2x2=4   2x3=6   2x4=8   2x5=10
+    3x1=3   3x2=6   3x3=9   3x4=12  3x5=15
+    4x1=4   4x2=8   4x3=12  4x4=16  4x5=20
+    5x1=5   5x2=10  5x3=15  5x4=20  5x5=25
+
+Requirement:
+- Gunakan nested for loop
+- Format output dengan tab/space alignment
+- User input untuk max_number (validasi > 0 dan <= 12)
+
+
+[PS8] PROBLEM: Polymorphic Collection Processing
+
+→ SOAL:
+Buat hierarchy: Employee (abstract) → Manager, Developer, Designer
+
+Masing-masing dengan different bonus calculation:
+- Manager: base_salary × 20%
+- Developer: base_salary × 15%
+- Designer: base_salary × 12%
+
+Buat ArrayList yang berisi mixed employees (5-10 items), kemudian:
+a) Tampilkan nama + gaji pokok + bonus (polymorphic)
+b) Hitung total bonus untuk semua employee
+c) Cari employee dengan bonus terbesar
+
+Requirement:
+- Gunakan polymorphic loop
+- Tidak boleh pakai instanceof untuk cek tipe
+- Semua harus handle polymorphically
+
+
+================================================================================
+CATATAN PENTING:
+================================================================================
+
+1. STANDAR SUBMISSION:
+   - Code dengan proper naming convention (camelCase untuk variable, PascalCase untuk class)
+   - Code dengan proper indentation dan formatting
+   - Comment untuk setiap metode publick
+   - No magic number (gunakan constant jika perlu)
+
+2. CODE QUALITY:
+   - Hindari code duplication
+   - Gunakan meaningful variable names
+   - Keep method focused (single responsibility)
+   - Proper error handling
+
+3. TESTING:
+   - Test dengan data normal
+   - Test dengan edge cases (empty, null, boundary)
+   - Test dengan invalid input
+
+4. DURASI PENGERJAAN:
+   - Soal Pilihan Ganda: 30 menit
+   - Soal Cerita: 15 menit
+   - Project: 3-7 jam (full development)
+   - Problem Solving: 1-2 jam
+
+5. PASSING CRITERIA:
+   - Soal Pilihan Ganda: >= 80% correct
+   - Soal Cerita: >= 75% correct reasoning
+   - Project: All features implemented + proper OOP structure
+   - Problem Solving: Algorithm correct + code clean
+
+================================================================================
+END OF CHALLENGES
+================================================================================
